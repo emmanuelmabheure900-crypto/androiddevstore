@@ -2,282 +2,186 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>AndroidDevStore</title>
-    <style>
-        /* Premium iOS System Variables */
-        :root {
-            --apple-blue: #007aff;
-            --apple-dark-gray: #1c1c1e;
-            --apple-glass: rgba(25, 25, 27, 0.45);
-            --apple-border: rgba(255, 255, 255, 0.08);
-        }
-
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, sans-serif;
-            background-color: #000000;
-            background-image: radial-gradient(circle at top right, #1a0b2e 0%, #000000 70%);
-            color: #ffffff;
-            -webkit-font-smoothing: antialiased;
-            overflow-x: hidden;
-        }
-
-        /* 🧪 Premium Liquid Glass Header */
-        .dev-header {
-            background-color: var(--apple-glass);
-            backdrop-filter: blur(30px) saturate(210%);
-            -webkit-backdrop-filter: blur(30px) saturate(210%);
-            padding: 22px 20px;
-            text-align: center;
-            border-bottom: 0.5px solid var(--apple-border);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
-        }
-        .dev-header h1 {
-            margin: 0;
-            font-size: 26px;
-            font-weight: 800;
-            letter-spacing: -0.5px;
-            background: linear-gradient(135deg, #ffffff 30%, #a2a2a2 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .dev-header p {
-            margin: 4px 0 0;
-            color: #ff9500;
-            font-size: 11px;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            font-weight: 700;
-        }
-
-        .store-body {
-            padding: 20px 16px;
-        }
-
-        /* 🔍 iOS Premium Search Bar with Glass Glow */
-        .search-container {
-            margin-bottom: 24px;
-        }
-        .ios-search-input {
-            width: 100%;
-            background-color: rgba(255, 255, 255, 0.06);
-            border: 0.5px solid var(--apple-border);
-            border-radius: 12px;
-            padding: 12px 16px;
-            font-size: 16px;
-            color: #ffffff;
-            box-sizing: border-box;
-            outline: none;
-            backdrop-filter: blur(10px);
-            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-        }
-        .ios-search-input:focus {
-            background-color: rgba(255, 255, 255, 0.1);
-            border-color: var(--apple-blue);
-            box-shadow: 0 0 15px rgba(0, 122, 255, 0.15);
-        }
-        .ios-search-input::placeholder {
-            color: #8e8e93;
-        }
-
-        .section-title {
-            font-size: 22px;
-            font-weight: 700;
-            letter-spacing: -0.5px;
-            margin-bottom: 14px;
-            padding-left: 4px;
-        }
-
-        /* 📱 Liquid Glass App Cards */
-        .app-item {
-            background-color: var(--apple-glass);
-            border: 0.5px solid var(--apple-border);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border-radius: 16px;
-            padding: 14px;
-            margin-bottom: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
-            transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.2s;
-        }
-        .app-item:active {
-            transform: scale(0.98);
-            background-color: rgba(255, 255, 255, 0.05);
-        }
-        .app-meta {
-            display: flex;
-            align-items: center;
-        }
-        /* App Store Premium Dynamic Artwork Layout */
-        .app-icon-frame {
-            width: 58px;
-            height: 58px;
-            border-radius: 13.5px; /* Perfect Apple squircle arc */
-            margin-right: 14px;
-            background-size: cover;
-            background-position: center;
-            border: 0.5px solid rgba(255,255,255,0.1);
-        }
-        .app-text h3 {
-            margin: 0;
-            font-size: 16px;
-            font-weight: 600;
-            letter-spacing: -0.3px;
-        }
-        .app-text p {
-            margin: 3px 0 0;
-            color: #aeaeae;
-            font-size: 12px;
-        }
-
-        /* iOS Capsule "GET" Button with Loading Wheel Built In */
-        .ios-get-btn {
-            background-color: #f2f2f7;
-            color: #007aff;
-            border: none;
-            border-radius: 18px;
-            padding: 6px 20px;
-            font-size: 13px;
-            font-weight: 700;
-            text-decoration: none;
-            transition: all 0.2s ease;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .ios-get-btn:active {
-            background-color: #d1d1d6;
-            transform: scale(0.95);
-        }
-
-        /* 📋 Liquid Glass About Us Panel */
-        .about-card {
-            background: linear-gradient(145deg, rgba(30,30,35,0.6), rgba(15,15,18,0.6));
-            border: 0.5px solid var(--apple-border);
-            backdrop-filter: blur(25px);
-            -webkit-backdrop-filter: blur(25px);
-            border-radius: 18px;
-            padding: 22px;
-            margin-top: 30px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-        }
-        .about-card h2 {
-            margin-top: 0;
-            font-size: 20px;
-            font-weight: 700;
-            letter-spacing: -0.5px;
-            color: #ffffff;
-        }
-        .about-card p {
-            color: #bfbfbf;
-            font-size: 14px;
-            line-height: 1.5;
-            margin-bottom: 16px;
-        }
-        .dev-badge {
-            background-color: rgba(255, 149, 0, 0.15);
-            color: #ff9500;
-            padding: 4px 10px;
-            border-radius: 6px;
-            font-size: 12px;
-            font-weight: 600;
-            display: inline-block;
-            margin-bottom: 12px;
-        }
-        .ai-badge {
-            background-color: rgba(52, 168, 83, 0.15);
-            color: #34a853;
-            padding: 4px 10px;
-            border-radius: 6px;
-            font-size: 12px;
-            font-weight: 600;
-            display: inline-block;
-            margin-bottom: 12px;
-            margin-left: 6px;
-        }
-        .email-link {
-            color: var(--apple-blue);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 14px;
-            display: inline-flex;
-            align-items: center;
-        }
-        .email-link:active {
-            opacity: 0.7;
-        }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>AndroidDevStore - Engineered by Emmanuel Mabheure</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <!-- Premium Engine Banner -->
-    <div class="dev-header">
+    <!-- 🍏 LIQUID GLASS HEADER SYSTEM -->
+    <header class="dev-header">
         <h1>AndroidDevStore</h1>
-        <p>Engineered by Emmanuel Mabheure</p>
-    </div>
+        <p>ENGINEERED BY EMMANUEL MABHEURE</p>
+    </header>
 
-    <div class="store-body">
-        <!-- Liquid Glass Search Bar Wrapper -->
-        <div class="search-container">
-            <input type="text" id="searchBar" class="ios-search-input" placeholder="Search iOS Clones..." onkeyup="filterApps()">
-        </div>
+    <main class="store-body">
 
-        <div class="section-title">Featured APKs</div>
-        
-        <!-- App Marketplace Catalog List -->
-        <div id="appList">
+        <!-- ⚡ TAB VIEWPORT 1: TODAY SHOWCASE -->
+        <div id="panel-today" class="tab-panel-viewport" style="display: block;">
+            <div class="intro-spotlight-card">
+                <h2>The introduction of apple ios apps and services to Android Devices by Emmanuel Mabheure</h2>
+            </div>
+
+            <div class="section-title">Featured Packages</div>
             
-            <!-- App 1: iOS Camera with Premium Stock Backdrop -->
             <div class="app-item">
                 <div class="app-meta">
-                    <div class="app-icon-frame" style="background-image: url('https://unsplash.com');"></div>
+                    <div class="app-icon-frame icon-status-bar"></div>
                     <div class="app-text">
-                        <h3>iOS 19 Camera</h3>
-                        <p>Apple processing layout clone</p>
+                        <h3>iOS Status Bar</h3>
+                        <p>System UI notification layer clone</p>
                     </div>
                 </div>
                 <a href="YOUR_LINK" class="ios-get-btn">GET</a>
             </div>
 
-            <!-- App 2: iMessage Style App with Premium UI Stock Backdrop -->
             <div class="app-item">
                 <div class="app-meta">
-                    <div class="app-icon-frame" style="background-image: url('https://unsplash.com');"></div>
+                    <div class="app-icon-frame icon-siri"></div>
                     <div class="app-text">
-                        <h3>iMessage Link</h3>
-                        <p>iOS messaging interface style</p>
+                        <h3>iOS Siri</h3>
+                        <p>Apple voice intelligence interface clone</p>
                     </div>
                 </div>
                 <a href="YOUR_LINK" class="ios-get-btn">GET</a>
             </div>
 
-            <!-- App 3: Dynamic Island with Dark Fluid Stock Backdrop -->
             <div class="app-item">
                 <div class="app-meta">
-                    <div class="app-icon-frame" style="background-image: url('https://unsplash.com');"></div>
+                    <div class="app-icon-frame icon-camera"></div>
+                    <div class="app-text">
+                        <h3>iOS Camera</h3>
+                        <p>Apple viewfinder interface clone</p>
+                    </div>
+                </div>
+                <a href="YOUR_LINK" class="ios-get-btn">GET</a>
+            </div>
+
+            <div class="app-item">
+                <div class="app-meta">
+                    <div class="app-icon-frame icon-island"></div>
                     <div class="app-text">
                         <h3>iOS Dynamic Island</h3>
-                        <p>Sleek status bubble notch</p>
+                        <p>Interactive notification tracking bubble</p>
                     </div>
                 </div>
                 <a href="YOUR_LINK" class="ios-get-btn">GET</a>
             </div>
-
         </div>
 
-        <!-- 📋 Personalized Liquid Glass About Us Module -->
-        <div class="about-card">
-            <span class="dev-badge">Founder: Emmanuel Mabheure</span>
-            <span class="ai-badge">Engineered with Google AI</span>
-            <h2>About AndroidDevStore</h2>
-            <p>Welcome to the ultimate repository for high-performance iOS alternatives. Founded and operated by Emmanuel Mabheure, this exclusive marketplace distributes optimized Android APK codes mimicking official Apple software mechanics, fluid layouts, and interfaces perfectly.</p>
+        <!-- 🔍 TAB VIEWPORT 2: ALL PACKAGES DIRECTORY -->
+        <div id="panel-apps" class="tab-panel-viewport" style="display: none;">
+            <div class="search-container">
+                <input type="text" id="searchBar" class="ios-search-input" placeholder="Search iOS Clones..." onkeyup="filterApps()">
+            </div>
 
+            <div class="category-row">
+                <span class="category-pill active-pill">All</span>
+                <span class="category-pill">System UI</span>
+                <span class="category-pill">AI Core</span>
+                <span class="category-pill">Media</span>
+            </div>
+
+            <div class="section-title">All System Packages</div>
+            
+            <div id="appList">
+                <div class="app-item list-search-item" data-name="ios status bar">
+                    <div class="app-meta">
+                        <div class="app-icon-frame icon-status-bar"></div>
+                        <div class="app-text">
+                            <h3>iOS Status Bar</h3>
+                            <p>System UI notification layer clone</p>
+                        </div>
+                    </div>
+                    <a href="YOUR_LINK" class="ios-get-btn">GET</a>
+                </div>
+
+                <div class="app-item list-search-item" data-name="ios siri">
+                    <div class="app-meta">
+                        <div class="app-icon-frame icon-siri"></div>
+                        <div class="app-text">
+                            <h3>iOS Siri</h3>
+                            <p>Apple voice intelligence interface clone</p>
+                        </div>
+                    </div>
+                    <a href="YOUR_LINK" class="ios-get-btn">GET</a>
+                </div>
+
+                <div class="app-item list-search-item" data-name="ios camera">
+                    <div class="app-meta">
+                        <div class="app-icon-frame icon-camera"></div>
+                        <div class="app-text">
+                            <h3>iOS Camera</h3>
+                            <p>Apple viewfinder interface clone</p>
+                        </div>
+                    </div>
+                    <a href="YOUR_LINK" class="ios-get-btn">GET</a>
+                </div>
+
+                <div class="app-item list-search-item" data-name="ios dynamic island">
+                    <div class="app-meta">
+                        <div class="app-icon-frame icon-island"></div>
+                        <div class="app-text">
+                            <h3>iOS Dynamic Island</h3>
+                            <p>Interactive notification tracking bubble</p>
+                        </div>
+                    </div>
+                    <a href="YOUR_LINK" class="ios-get-btn">GET</a>
+                </div>
+            </div>
+            <p id="noMatches" style="text-align: center; color: #8e8e93; font-size: 14px; margin-top: 30px; display: none;">No matching packages found.</p>
+        </div>
+
+        <!-- 👤 TAB VIEWPORT 3: DEVELOPER ENGINE PROFILE -->
+        <div id="panel-about" class="tab-panel-viewport" style="display: none;">
+            <div class="about-card">
+                <div class="badge-row">
+                    <span class="dev-badge">🎛️ Founder Matrix</span>
+                    <span class="ai-badge">🧬 Google AI Core</span>
+                </div>
+                <h2>About AndroidDevStore</h2>
+                <p>Welcome to the ultimate repository for high-performance iOS alternatives. Founded and operated by Emmanuel Mabheure, this exclusive marketplace distributes optimized Android APK codes mimicking official Apple software mechanics, fluid layouts, and interfaces perfectly.</p>
+                
+                <div class="system-spec-title">⚙️ Core Architecture Specification</div>
+                <div class="spec-grid">
+                    <div class="spec-node">
+                        <span>Distribution Node</span>
+                        <strong>GitHub Pages CDN</strong>
+                    </div>
+                    <div class="spec-node">
+                        <span>Target Binaries</span>
+                        <strong>Android APK Packages</strong>
+                    </div>
+                    <div class="spec-node">
+                        <span>Layout Framework</span>
+                        <strong>Frosted Liquid Glass v2.5</strong>
+                    </div>
+                    <div class="spec-node">
+                        <span>Project Source</span>
+                        <strong>Mobile Smartphone Native</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- SYSTEM LAYER NAVIGATION DOCK -->
+    <nav class="nav-dock">
+        <div id="dock-today-node" class="dock-item active" onclick="dispatchView('today')">
+            <span class="dock-icon">⚡</span>
+            <span>Today</span>
+        </div>
+        <div id="dock-apps-node" class="dock-item" onclick="dispatchView('apps')">
+            <span class="dock-icon">🔍</span>
+            <span>Apps</span>
+        </div>
+        <div id="dock-about-node" class="dock-item" onclick="dispatchView('about')">
+            <span class="dock-icon">👤</span>
+            <span>Developer</span>
+        </div>
+    </nav>
+
+    <script src="script.js"></script>
+</body>
+</html>

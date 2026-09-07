@@ -1,16 +1,29 @@
 <!DOCTYPE html>
+<!-- 
+  ========================================================================
+  SECURE DISTRIBUTION ENDPOINT LICENSE PROMPT v2.6
+  ENGINEERED BY EMMANUEL MABHEURE | DOWNLOAD LAYER HANDSHAKE NODE
+  ========================================================================
+-->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AndroidDevStore - Secure Server</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>AndroidDevStore Secure Servers</title>
     <style>
-        /* Matches your beautiful Frosted Liquid Glass v2.5 main store aesthetic */
+        :root {
+            --ios-bg: #000000;
+            --ios-border: rgba(255, 255, 255, 0.08);
+            --ios-text-main: #ffffff;
+            --ios-text-sub: rgba(255, 255, 255, 0.55);
+            --ios-orange: #ff9f0a;
+            --sf-font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", sans-serif;
+        }
+
         body {
-            background: linear-gradient(135deg, #0b0914 0%, #151126 100%);
-            color: #ffffff;
-            /* Native iOS/Apple System Font Stack */
-            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+            background: linear-gradient(135deg, #0b0914 0%, #000000 100%);
+            color: var(--ios-text-main);
+            font-family: var(--sf-font);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -19,122 +32,106 @@
             overflow: hidden;
         }
 
-        /* Glassmorphism card matching your website's UI layout */
         .glass-card {
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            background: rgba(28, 28, 30, 0.75);
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
+            border: 1px solid var(--ios-border);
             border-radius: 24px;
-            padding: 40px 30px;
+            padding: 40px 32px;
             max-width: 320px;
             width: 85%;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.6);
             text-align: center;
+            box-sizing: border-box;
         }
 
-        /* Native iOS-style looping loading gesture */
-        .ios-spinner {
-            position: relative;
-            width: 44px;
-            height: 44px;
-            margin: 0 auto 24px;
-        }
-
-        .ios-spinner div {
-            position: absolute;
-            width: 10%;
-            height: 28%;
-            background: #ff9f0a; /* Matches your accent orange */
-            left: 44.5%;
-            top: 37%;
-            opacity: 0;
-            border-radius: 50px;
-            animation: ios-fade 1s linear infinite;
-        }
-
-        /* Generates the 12 specific ticks for the iOS gesture blade wheel */
-        .ios-spinner div:nth-child(1)  { transform: rotate(0deg) translate(0, -130%); animation-delay: 0s; }
-        .ios-spinner div:nth-child(2)  { transform: rotate(30deg) translate(0, -130%); animation-delay: -0.9167s; }
-        .ios-spinner div:nth-child(3)  { transform: rotate(60deg) translate(0, -130%); animation-delay: -0.8333s; }
-        .ios-spinner div:nth-child(4)  { transform: rotate(90deg) translate(0, -130%); animation-delay: -0.75s; }
-        .ios-spinner div:nth-child(5)  { transform: rotate(120deg) translate(0, -130%); animation-delay: -0.6667s; }
-        .ios-spinner div:nth-child(6)  { transform: rotate(150deg) translate(0, -130%); animation-delay: -0.5833s; }
-        .ios-spinner div:nth-child(7)  { transform: rotate(180deg) translate(0, -130%); animation-delay: -0.5s; }
-        .ios-spinner div:nth-child(8)  { transform: rotate(210deg) translate(0, -130%); animation-delay: -0.4167s; }
-        .ios-spinner div:nth-child(9)  { transform: rotate(240deg) translate(0, -130%); animation-delay: -0.3333s; }
+        .ios-spinner { position: relative; width: 44px; height: 44px; margin: 0 auto 24px; }
+        .ios-spinner div { position: absolute; width: 10%; height: 26%; background: var(--ios-orange); left: 44.5%; top: 37%; opacity: 0; border-radius: 50px; animation: ios-fade-loop 1s linear infinite; }
+        .ios-spinner div:nth-child(1) { transform: rotate(0deg) translate(0, -130%); animation-delay: 0s; }
+        .ios-spinner div:nth-child(2) { transform: rotate(30deg) translate(0, -130%); animation-delay: -0.9167s; }
+        .ios-spinner div:nth-child(3) { transform: rotate(60deg) translate(0, -130%); animation-delay: -0.8333s; }
+        .ios-spinner div:nth-child(4) { transform: rotate(90deg) translate(0, -130%); animation-delay: -0.75s; }
+        .ios-spinner div:nth-child(5) { transform: rotate(120deg) translate(0, -130%); animation-delay: -0.6667s; }
+        .ios-spinner div:nth-child(6) { transform: rotate(150deg) translate(0, -130%); animation-delay: -0.5833s; }
+        .ios-spinner div:nth-child(7) { transform: rotate(180deg) translate(0, -130%); animation-delay: -0.5s; }
+        .ios-spinner div:nth-child(8) { transform: rotate(210deg) translate(0, -130%); animation-delay: -0.4167s; }
+        .ios-spinner div:nth-child(9) { transform: rotate(240deg) translate(0, -130%); animation-delay: -0.3333s; }
         .ios-spinner div:nth-child(10) { transform: rotate(270deg) translate(0, -130%); animation-delay: -0.25s; }
         .ios-spinner div:nth-child(11) { transform: rotate(300deg) translate(0, -130%); animation-delay: -0.1667s; }
         .ios-spinner div:nth-child(12) { transform: rotate(330deg) translate(0, -130%); animation-delay: -0.0833s; }
 
-        @keyframes ios-fade {
-            from { opacity: 1; }
-            to { opacity: 0.15; }
-        }
-
-        h2 {
-            font-size: 20px;
-            font-weight: 600;
-            margin: 0 0 10px 0;
-            letter-spacing: -0.4px;
-        }
-
-        p {
-            color: rgba(255, 255, 255, 0.55);
-            font-size: 14px;
-            line-height: 1.4;
-            margin: 0;
-            font-weight: 400;
-        }
+        @keyframes ios-fade-loop { from { opacity: 1; } to { opacity: 0.15; } }
+        h2 { font-size: 20px; font-weight: 700; margin: 0 0 10px 0; letter-spacing: -0.4px; }
+        p { color: var(--ios-text-sub); font-size: 13px; line-height: 1.4; margin: 0; }
     </style>
 </head>
 <body>
 
     <div class="glass-card">
-        <!-- iOS 12-blade gesture loading loop -->
-        <div class="ios-spinner">
+        <div class="ios-spinner" id="loadingSpinner">
             <div></div><div></div><div></div><div></div>
             <div></div><div></div><div></div><div></div>
             <div></div><div></div><div></div><div></div>
         </div>
-        <h2>Requesting Package...</h2>
-        <p>Your APK file download will start immediately in your browser folder.</p>
+        <h2 id="statusHeading">Connecting...</h2>
+        <p id="statusDetails">Preparing secure handshake connection down-link to server grid.</p>
     </div>
 
     <script>
-        // ==========================================
-        // 1. YOUR NO-CODE LINK CONTROLLER DATABASE
-        // ==========================================
-        // When you have real APK links, we will ONLY edit the links inside the quotes below!
-        const apkLinks = {
-            "statusbar": "https://githubusercontent.com", 
-            "siri": "YOUR_REAL_SIRI_DOWNLOAD_LINK_HERE",
-            "camera": "YOUR_REAL_CAMERA_DOWNLOAD_LINK_HERE",
-            "dynamicisland": "YOUR_REAL_DYNAMIC_ISLAND_DOWNLOAD_LINK_HERE"
+        // ========================================================================
+        // EMMANUEL'S MASTER DOWNLOAD LINK STORAGE
+        // When you upload a new APK, just delete "COMING_SOON" and paste your link!
+        // ========================================================================
+        const downloadDatabase = {
+            "calculator": "COMING_SOON",
+            "clock": "COMING_SOON",
+            "notes": "COMING_SOON",
+            "settings": "COMING_SOON",
+            "compass": "COMING_SOON",
+            "weather": "COMING_SOON",
+            "files": "COMING_SOON",
+            "reminders": "COMING_SOON",
+            "voicememos": "COMING_SOON",
+            "calendar": "COMING_SOON",
+            "statusbar": "COMING_SOON",
+            "siri": "COMING_SOON",
+            "camera": "COMING_SOON",
+            "dynamicisland": "COMING_SOON"
         };
 
-        // ==========================================
-        // 2. AUTOMATIC VERIFICATION LOGIC
-        // ==========================================
-        try {
-            const urlParams = new URLSearchParams(window.location.search);
-            const appName = urlParams.get('app');
+        function processDownload() {
+            try {
+                const urlParams = new URLSearchParams(window.location.search);
+                const appKey = urlParams.get('app');
 
-            if (appName && apkLinks[appName] && !apkLinks[appName].includes("YOUR_REAL")) {
-                
-                // 1-second pause to let the user see your sleek iOS loading gesture
-                setTimeout(() => {
-                    window.location.href = apkLinks[appName];
-                }, 1000);
-                
-            } else {
-                // Safe Fallback: If it's a test run or empty, show alert and go to main page
-                alert("App bundle package is currently updating. Returning to AndroidDevStore main page.");
-                window.location.href = "index.html"; 
+                if (!appKey || !downloadDatabase.hasOwnProperty(appKey)) {
+                    window.location.href = "index.html";
+                    return;
+                }
+
+                const targetLink = downloadDatabase[appKey];
+
+                if (targetLink === "COMING_SOON") {
+                    setTimeout(() => {
+                        document.getElementById('statusHeading').innerText = "Coming Soon";
+                        document.getElementById('statusHeading').style.color = "var(--ios-orange)";
+                        document.getElementById('statusDetails').innerText = "Emmanuel is currently coding and compiling this APK package from scratch. Returning Home...";
+                        
+                        setTimeout(() => { window.location.href = "index.html"; }, 3000);
+                    }, 1000);
+                } else {
+                    setTimeout(() => {
+                        document.getElementById('statusHeading').innerText = "Downloading";
+                        document.getElementById('statusDetails').innerText = "Your secure binary download has initialized successfully. Check your browser folder.";
+                        window.location.href = targetLink;
+                    }, 1500);
+                }
+            } catch (err) {
+                window.location.href = "index.html";
             }
-        } catch (error) {
-            window.location.href = "index.html";
         }
+        window.onload = processDownload;
     </script>
 </body>
 </html>

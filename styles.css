@@ -1,0 +1,330 @@
+/* 🍏 PREMIUM SYSTEM DEEP INTERFACE SCHEMES */
+:root {
+    --apple-blue: #007aff;
+    --apple-dark-gray: #1c1c1e;
+    --apple-glass: rgba(25, 25, 27, 0.45);
+    --apple-border: rgba(255, 255, 255, 0.08);
+    --apple-card: rgba(28, 28, 30, 0.65);
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100vh;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, sans-serif;
+    background-color: #000000;
+    background-image: radial-gradient(circle at top right, #1a0b2e 0%, #000000 70%);
+    color: #ffffff;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+    padding-bottom: 130px;
+}
+
+/* 🧪 PREMIUM LIQUID GLASS HEADER PANEL */
+.dev-header {
+    background-color: var(--apple-glass);
+    backdrop-filter: blur(30px) saturate(210%);
+    -webkit-backdrop-filter: blur(30px) saturate(210%);
+    padding: 22px 20px;
+    text-align: center;
+    border-bottom: 0.5px solid var(--apple-border);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
+}
+.dev-header h1 {
+    margin: 0;
+    font-size: 26px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    background: linear-gradient(135deg, #ffffff 30%, #a2a2a2 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.dev-header p {
+    margin: 4px 0 0;
+    color: #ff9500;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 700;
+}
+
+.store-body {
+    padding: 20px 16px;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.tab-panel-viewport {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* 🎯 SPOTLIGHT CARD SPECIFICATIONS */
+.intro-spotlight-card {
+    background-color: var(--apple-glass);
+    border: 0.5px solid var(--apple-border);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 20px;
+    padding: 22px;
+    margin-bottom: 26px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+}
+.intro-spotlight-card h2 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 800;
+    line-height: 1.4;
+    letter-spacing: -0.3px;
+}
+
+/* 🔍 iOS Premium Search Bar with Glass Glow */
+.search-container {
+    margin-bottom: 16px;
+    width: 100%;
+}
+.ios-search-input {
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.06);
+    border: 0.5px solid var(--apple-border);
+    border-radius: 12px;
+    padding: 14px 16px;
+    font-size: 16px;
+    color: #ffffff;
+    box-sizing: border-box;
+    outline: none;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+.ios-search-input:focus {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: var(--apple-blue);
+    box-shadow: 0 0 15px rgba(0, 122, 255, 0.15);
+}
+
+/* 🎰 OPTIMIZED HORIZONTAL NAVIGATION PILLS */
+.category-row {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    padding-bottom: 16px;
+    margin-bottom: 12px;
+}
+.category-row::-webkit-scrollbar { display: none; }
+.category-pill {
+    background-color: rgba(255,255,255,0.06);
+    border: 0.5px solid var(--apple-border);
+    color: #8e8e93;
+    padding: 6px 14px;
+    border-radius: 14px;
+    font-size: 13px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+.category-pill.active-pill {
+    background-color: #ffffff;
+    color: #000000;
+    font-weight: 700;
+}
+
+.section-title {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    margin-bottom: 14px;
+    padding-left: 4px;
+}
+
+/* 📱 Liquid Glass App Cards */
+.app-item {
+    background-color: var(--apple-card);
+    border: 0.5px solid var(--apple-border);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 16px;
+    padding: 14px;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    box-sizing: border-box;
+    width: 100%;
+}
+.app-meta {
+    display: flex;
+    align-items: center;
+    flex: 1;
+}
+.app-icon-frame {
+    width: 58px;
+    height: 58px;
+    border-radius: 13.5px;
+    margin-right: 14px;
+    border: 0.5px solid rgba(255,255,255,0.1);
+    flex-shrink: 0;
+}
+
+.icon-status-bar { background: linear-gradient(135deg, #34c759 0%, #104c1b 100%); }
+.icon-siri { background: radial-gradient(circle at center, #ff2d55 0%, #5856d6 55%, #000000 100%); }
+.icon-camera { background: linear-gradient(135deg, #8e8e93 0%, #2c2c2e 100%); }
+.icon-island { background: linear-gradient(135deg, #1c1c1e 0%, #000000 100%); }
+
+.app-text h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: -0.3px;
+}
+.app-text p {
+    margin: 4px 0 0;
+    color: #aeaeae;
+    font-size: 12px;
+}
+
+/* iOS Capsule "GET" Button */
+.ios-get-btn {
+    background-color: #f2f2f7;
+    color: #007aff;
+    border: none;
+    border-radius: 18px;
+    padding: 6px 20px;
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    flex-shrink: 0;
+}
+
+/* 📋 Liquid Glass About Us Panel */
+.about-card {
+    background: linear-gradient(145deg, rgba(30,30,35,0.6), rgba(15,15,18,0.6));
+    border: 0.5px solid var(--apple-border);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    border-radius: 18px;
+    padding: 22px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    width: 100%;
+    box-sizing: border-box;
+}
+.about-card h2 {
+    margin-top: 0;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    color: #ffffff;
+    margin-bottom: 12px;
+}
+.about-card p {
+    color: #bfbfbf;
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 24px;
+}
+.badge-row {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 14px;
+}
+.dev-badge {
+    background-color: rgba(255, 149, 0, 0.15);
+    color: #ff9500;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 700;
+}
+.ai-badge {
+    background-color: rgba(52, 168, 83, 0.15);
+    color: #34a853;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+/* ⚙️ ADVANCED ARCHITECTURE SPECIFICATION ENGINE PANELS */
+.system-spec-title {
+    font-size: 15px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #8e8e93;
+    margin-bottom: 12px;
+    border-top: 0.5px solid var(--apple-border);
+    padding-top: 16px;
+}
+.spec-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+.spec-node {
+    background-color: rgba(255,255,255,0.04);
+    border: 0.5px solid var(--apple-border);
+    border-radius: 12px;
+    padding: 12px;
+}
+.spec-node span {
+    display: block;
+    font-size: 11px;
+    color: #8e8e93;
+    margin-bottom: 4px;
+}
+.spec-node strong {
+    font-size: 13px;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+/* 🕹️ FIXED PERSISTENT SYSTEM OVERLAY NAVIGATION DOCK */
+.nav-dock {
+    position: fixed;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 86%;
+    max-width: 400px;
+    background-color: rgba(20, 20, 22, 0.95);
+    backdrop-filter: blur(30px) saturate(190%);
+    -webkit-backdrop-filter: blur(30px) saturate(190%);
+    border-radius: 26px;
+    border: 0.5px solid var(--apple-border);
+    padding: 8px 4px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 9999;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+}
+.dock-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #8e8e93;
+    text-decoration: none;
+    font-size: 11px;
+    font-weight: 600;
+    cursor: pointer;
+    flex: 1;
+    text-align: center;
+    -webkit-tap-highlight-color: transparent;
+}
+.dock-item.active {
+    color: var(--apple-blue);
+}
+.dock-icon {
+    font-size: 22px;
+    margin-bottom: 2px;
+}
+

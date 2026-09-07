@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://sitemaps.org">
+    <!-- 1. YOUR MAIN WEB PORTAL CARD STOREFRONT -->
+    <url>
+        <loc>https://github.io</loc>
+        <lastmod>2026-09-07</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    <!-- 2. YOUR SECURE INTERMEDIARY LOADING SERVER PAGE -->
+    <url>
+        <loc>https://github.io</loc>
+        <lastmod>2026-09-07</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+</urlset>
+

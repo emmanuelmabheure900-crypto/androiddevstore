@@ -372,17 +372,3 @@ html, body {
     font-size: 22px;
     margin-bottom: 2px;
 }
-/* ========================================== */
-/*  EMMANUEL'S SECURE IMAGE OVERRIDE PATCH    */
-/* ========================================== */
-.ios-app-icon {
-    width: 45px !important;
-    height: 45px !important;
-    min-width: 45px !important;
-    min-height: 45px !important;
-    border-radius: 12px !important;
-    margin-right: 14px !important;
-    object-fit: cover !important;
-    display: block !important;
-    flex-shrink: 0 !important;
-}

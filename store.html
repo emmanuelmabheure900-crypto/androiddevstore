@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>AndroidDevStore - Engineered by Emmanuel Mabheure</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- 🍏 LIQUID GLASS HEADER SYSTEM -->
+    <header class="dev-header">
+        <h1>AndroidDevStore</h1>
+        <p>ENGINEERED BY EMMANUEL MABHEURE</p>
+    </header>
+
+    <main class="store-body">
+
+        <!-- ⚡ TAB VIEWPORT 1: TODAY SHOWCASE -->
+        <div id="panel-today" class="tab-panel-viewport" style="display: block;">
+            <div class="intro-spotlight-card">
+                <h2>The introduction of apple ios apps and services to Android Devices by Emmanuel Mabheure</h2>
+            </div>
+
+            <div class="section-title">Featured Packages</div>
+            
+            <div class="app-item">
+                <div class="app-meta">
+                    <div class="app-icon-frame icon-status-bar"></div>
+                    <div class="app-text">
+                        <h3>iOS Status Bar</h3>
+                        <p>System UI notification layer clone</p>
+                    </div>
+                </div>
+                <a href="YOUR_LINK" class="ios-get-btn">GET</a>
+            </div>
+
+            <div class="app-item">
+                <div class="app-meta">
+                    <div class="app-icon-frame icon-siri"></div>
+                    <div class="app-text">
+                        <h3>iOS Siri</h3>
+                        <p>Apple voice intelligence interface clone</p>
+                    </div>
+                </div>
+                <a href="YOUR_LINK" class="ios-get-btn">GET</a>
+            </div>
+
+            <div class="app-item">
+                <div class="app-meta">
+                    <div class="app-icon-frame icon-camera"></div>
+                    <div class="app-text">
+                        <h3>iOS Camera</h3>
+                        <p>Apple viewfinder interface clone</p>
+                    </div>
+                </div>
+                <a href="YOUR_LINK" class="ios-get-btn">GET</a>
+            </div>
+
+            <div class="app-item">
+                <div class="app-meta">
+                    <div class="app-icon-frame icon-island"></div>
+                    <div class="app-text">
+                        <h3>iOS Dynamic Island</h3>
+                        <p>Interactive notification tracking bubble</p>
+                    </div>
+                </div>
+                <a href="YOUR_LINK" class="ios-get-btn">GET</a>
+            </div>
+        </div>
+
+        <!-- 🔍 TAB VIEWPORT 2: ALL PACKAGES DIRECTORY -->
+        <div id="panel-apps" class="tab-panel-viewport" style="display: none;">
+            <div class="search-container">
+                <input type="text" id="searchBar" class="ios-search-input" placeholder="Search iOS Clones..." onkeyup="filterApps()">
+            </div>
+
+            <div class="category-row">
+                <span class="category-pill active-pill">All</span>
+                <span class="category-pill">System UI</span>
+                <span class="category-pill">AI Core</span>
+                <span class="category-pill">Media</span>
+            </div>
+
+            <div class="section-title">All System Packages</div>
+            
+            <div id="appList">
+                <div class="app-item list-search-item" data-name="ios status bar">
+                    <div class="app-meta">
+                        <div class="app-icon-frame icon-status-bar"></div>
+                        <div class="app-text">
+                            <h3>iOS Status Bar</h3>
+                            <p>System UI notification layer clone</p>
+                        </div>
+                    </div>
+                    <a href="YOUR_LINK" class="ios-get-btn">GET</a>
+                </div>
+
+                <div class="app-item list-search-item" data-name="ios siri">
+                    <div class="app-meta">
+                        <div class="app-icon-frame icon-siri"></div>
+                        <div class="app-text">
+                            <h3>iOS Siri</h3>
+                            <p>Apple voice intelligence interface clone</p>
+                        </div>
+                    </div>
+                    <a href="YOUR_LINK" class="ios-get-btn">GET</a>
+                </div>
+
+                <div class="app-item list-search-item" data-name="ios camera">
+                    <div class="app-meta">
+                        <div class="app-icon-frame icon-camera"></div>
+                        <div class="app-text">
+                            <h3>iOS Camera</h3>
+                            <p>Apple viewfinder interface clone</p>
+                        </div>
+                    </div>
+                    <a href="YOUR_LINK" class="ios-get-btn">GET</a>
+                </div>
+
+                <div class="app-item list-search-item" data-name="ios dynamic island">
+                    <div class="app-meta">
+                        <div class="app-icon-frame icon-island"></div>
+                        <div class="app-text">
+                            <h3>iOS Dynamic Island</h3>
+                            <p>Interactive notification tracking bubble</p>
+                        </div>
+                    </div>
+                    <a href="YOUR_LINK" class="ios-get-btn">GET</a>
+                </div>
+            </div>
+            <p id="noMatches" style="text-align: center; color: #8e8e93; font-size: 14px; margin-top: 30px; display: none;">No matching packages found.</p>
+        </div>
+
+        <!-- 👤 TAB VIEWPORT 3: DEVELOPER ENGINE PROFILE -->
+        <div id="panel-about" class="tab-panel-viewport" style="display: none;">
+            <div class="about-card">
+                <div class="badge-row">
+                    <span class="dev-badge">🎛️ Founder Matrix</span>
+                    <span class="ai-badge">🧬 Google AI Core</span>
+                </div>
+                <h2>About AndroidDevStore</h2>
+                <p>Welcome to the ultimate repository for high-performance iOS alternatives. Founded and operated by Emmanuel Mabheure, this exclusive marketplace distributes optimized Android APK codes mimicking official Apple software mechanics, fluid layouts, and interfaces perfectly.</p>
+                
+                <div class="system-spec-title">⚙️ Core Architecture Specification</div>
+                <div class="spec-grid">
+                    <div class="spec-node">
+                        <span>Distribution Node</span>
+                        <strong>GitHub Pages CDN</strong>
+                    </div>
+                    <div class="spec-node">
+                        <span>Target Binaries</span>
+                        <strong>Android APK Packages</strong>
+                    </div>
+                    <div class="spec-node">
+                        <span>Layout Framework</span>
+                        <strong>Frosted Liquid Glass v2.5</strong>
+                    </div>
+                    <div class="spec-node">
+                        <span>Project Source</span>
+                        <strong>Mobile Smartphone Native</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- SYSTEM LAYER NAVIGATION DOCK -->
+    <nav class="nav-dock">
+        <div id="dock-today-node" class="dock-item active" onclick="dispatchView('today')">
+            <span class="dock-icon">⚡</span>
+            <span>Today</span>
+        </div>
+        <div id="dock-apps-node" class="dock-item" onclick="dispatchView('apps')">
+            <span class="dock-icon">🔍</span>
+            <span>Apps</span>
+        </div>
+        <div id="dock-about-node" class="dock-item" onclick="dispatchView('about')">
+            <span class="dock-icon">👤</span>
+            <span>Developer</span>
+        </div>
+    </nav>
+
+    <script src="script.js"></script>
+</body>
+</html>
+

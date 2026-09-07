@@ -1,4 +1,4 @@
-/* 🍏 PREMIUM SYSTEM DEEP INTERFACE SCHEMES */
+/* 🍏 PREMIUM CORE SYSTEM INTERFACE VARIABLE SCHEMES */
 :root {
     --apple-blue: #007aff;
     --apple-dark-gray: #1c1c1e;
@@ -21,7 +21,52 @@ html, body {
     padding-bottom: 130px;
 }
 
-/* 🧪 PREMIUM LIQUID GLASS HEADER PANEL */
+/* 📥 NEW LAYER: PREMIUM APPLE STYLE DROPDOWN TOAST BANNER CONTAINER */
+.ios-alert-toast-banner {
+    position: fixed;
+    top: -100px; /* Hidden completely above screen viewport bounds by default */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 360px;
+    background-color: rgba(20, 20, 25, 0.92);
+    backdrop-filter: blur(25px) saturate(210%);
+    -webkit-backdrop-filter: blur(25px) saturate(210%);
+    border: 0.5px solid var(--apple-border);
+    border-radius: 22px;
+    padding: 12px 16px;
+    z-index: 10000; /* Stays floating safely above persistent header nodes */
+    box-shadow: 0 12px 35px rgba(0,0,0,0.6);
+    box-sizing: border-box;
+    transition: top 0.4s cubic-bezier(0.25, 1, 0.5, 1); /* Elegant physical bounce spring simulation deceleration */
+}
+.ios-alert-toast-banner.show-alert-toast {
+    top: 20px; /* Slides smoothly down into safe viewport frame boundary */
+}
+.toast-content-node {
+    display: flex;
+    align-items: center;
+}
+.toast-icon-bubble {
+    font-size: 20px;
+    margin-right: 12px;
+    background-color: rgba(0, 122, 255, 0.15);
+    padding: 6px;
+    border-radius: 50%;
+}
+.toast-text-track h4 {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 700;
+    color: #ffffff;
+}
+.toast-text-track p {
+    margin: 2px 0 0;
+    font-size: 12px;
+    color: #aeaeae;
+}
+
+/* 🧪 LIQUID GLASS PERSISTENT TOP BANNER */
 .dev-header {
     background-color: var(--apple-glass);
     backdrop-filter: blur(30px) saturate(210%);
@@ -253,7 +298,7 @@ html, body {
     font-weight: 700;
 }
 
-/* ⚙️ ADVANCED ARCHITECTURE SPECIFICATION ENGINE PANELS */
+/* ⚙️ ADVANCED ARCHITECTURE SPEC ENGINE PANELS */
 .system-spec-title {
     font-size: 15px;
     font-weight: 700;
@@ -327,4 +372,3 @@ html, body {
     font-size: 22px;
     margin-bottom: 2px;
 }
-

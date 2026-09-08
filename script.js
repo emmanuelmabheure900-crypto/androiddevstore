@@ -1,6 +1,6 @@
 /* ========================================================================
    CORE STORE APPLICATION MECHANICS BLUEPRINT
-   DEVELOPER CODE ARCHITECTURE PROTECTION VERIFIED v2.6
+   DEVELOPER CODE ARCHITECTURE PROTECTION VERIFIED v2.7
    ======================================================================== */
 
 const storeDatabase = [
@@ -16,16 +16,29 @@ const storeDatabase = [
     { id: "calendar", name: "iOS Calendar Planner", desc: "Chronological daily task scheduler agenda timeline tracker", isFeatured: false, classIcon: "icon-calendar", svgPath: "M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm-5-7H7v2h7v-2z" }
 ];
 
-/* NATIVE ECOSYSTEM INTEGRITY RUNTIME SHIELD
-   Verifies hosting node legitimacy to lock code piracy targets */
+/* SECURE DEVELOPER BYPASS MATRIX */
+// If the shield locks you anywhere online, type window.activateDevKey() in your console once!
+window.activateDevKey = function() {
+    localStorage.setItem("dev_key_sig", "emmanuel-master-key");
+    alert("Developer Signature Active. Refreshing platform...");
+    window.location.reload();
+};
+
 function verifyPlatformIntegrity() {
+    // 1. Check if your phone's browser holds your secret bypass key
+    if (localStorage.getItem("dev_key_sig") === "emmanuel-master-key") {
+        return true; 
+    }
+
     const currentDomain = window.location.hostname;
-    // Authorized domains: localhost, JSFiddle previews, and your verified GitHub server nodes
+    
+    // 2. Check standard allowed staging testing anchors
     if (currentDomain && 
         !currentDomain.includes("localhost") && 
         !currentDomain.includes("jsfiddle") && 
         !currentDomain.includes("jshell.net") && 
         !currentDomain.includes("github.io")) {
+        
         const shield = document.getElementById("integrity-lock-screen");
         if (shield) shield.style.display = "block";
         return false;

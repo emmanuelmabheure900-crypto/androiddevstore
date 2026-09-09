@@ -1,36 +1,69 @@
-function processDownload() {
-    try {
-        const urlParams = new URLSearchParams(window.location.search);
-        const appKey = urlParams.get('app');
+<script>
+    // EMMANUEL'S MASTER DOWNLOAD LINK STORAGE WITH DIRECT DOWNLOAD FIX
+    const downloadDatabase = {
+        "calculator": "https://google.com",
+        "clock": "COMING_SOON",
+        "notes": "COMING_SOON",
+        "settings": "COMING_SOON",
+        "compass": "COMING_SOON",
+        "weather": "COMING_SOON",
+        "files": "COMING_SOON",
+        "reminders": "COMING_SOON",
+        "voicememos": "COMING_SOON",
+        "calendar": "COMING_SOON",
+        "statusbar": "COMING_SOON",
+        "siri": "COMING_SOON",
+        "camera": "COMING_SOON",
+        "dynamicisland": "COMING_SOON"
+    };
 
-        if (!appKey || !downloadDatabase.hasOwnProperty(appKey)) {
+    function processDownload() {
+        try {
+            const urlParams = new URLSearchParams(window.location.search);
+            const appKey = urlParams.get('app');
+
+            if (!appKey || !downloadDatabase.hasOwnProperty(appKey)) {
+                window.location.href = "index.html";
+                return;
+            }
+
+            const targetLink = downloadDatabase[appKey];
+
+            if (targetLink === "COMING_SOON") {
+                setTimeout(() => {
+                    document.getElementById('statusHeading').innerText = "Coming Soon";
+                    document.getElementById('statusHeading').style.color = "var(--ios-orange)";
+                    document.getElementById('statusDetails').innerText = "Emmanuel is currently coding and compiling this application.";
+                    
+                    setTimeout(() => {
+                        window.location.href = "index.html";
+                    }, 2000);
+                }, 1500);
+            } else {
+                setTimeout(() => {
+                    document.getElementById('statusHeading').innerText = "Downloading...";
+                    document.getElementById('statusDetails').innerText = "Your secure binary download has initialized successfully.";
+
+                    // FIX: Silent background download anchor so the user is never moved out of the web
+                    const silentDownloader = document.createElement('a');
+                    silentDownloader.href = targetLink;
+                    silentDownloader.setAttribute('download', `${appKey}.apk`); 
+                    silentDownloader.style.display = 'none';
+                    
+                    document.body.appendChild(silentDownloader);
+                    silentDownloader.click();
+                    document.body.removeChild(silentDownloader);
+
+                    setTimeout(() => {
+                        window.location.href = "index.html";
+                    }, 3000);
+
+                }, 1500);
+            }
+        } catch (err) {
             window.location.href = "index.html";
-            return;
         }
-
-        const targetLink = downloadDatabase[appKey];
-
-        if (targetLink === "COMING_SOON") {
-            // Keeps your exact original delay and route-back logic untouched
-            setTimeout(() => {
-                window.location.href = "index.html";
-            }, 2000);
-        } else {
-            // Triggers the download silently in the background
-            const silentDownloader = document.createElement('a');
-            silentDownloader.href = targetLink;
-            silentDownloader.setAttribute('download', `${appKey}.apk`); 
-            silentDownloader.style.display = 'none';
-            document.body.appendChild(silentDownloader);
-            silentDownloader.click();
-            document.body.removeChild(silentDownloader);
-
-            // Routes back safely after the download starts without modifying any screen text
-            setTimeout(() => {
-                window.location.href = "index.html";
-            }, 3000);
-        }
-    } catch (err) {
-        window.location.href = "index.html";
     }
-}
+
+    window.onload = processDownload;
+</script>

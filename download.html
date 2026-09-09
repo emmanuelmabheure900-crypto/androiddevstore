@@ -84,7 +84,7 @@
         // When you upload a new APK, just delete "COMING_SOON" and paste your link!
         // ========================================================================
         const downloadDatabase = {
-            "calculator": "https://drive.google.com/file/d/16slk1OvSKIJd-JuCZjMPIBzIiPeQ22AG/view?usp=drivesdk",
+            "calculator": "COMING_SOON",
             "clock": "COMING_SOON",
             "notes": "COMING_SOON",
             "settings": "COMING_SOON",
@@ -120,25 +120,14 @@
                         
                         setTimeout(() => { window.location.href = "index.html"; }, 3000);
                     }, 1000);
-                                     } else {
-            setTimeout(() => {
-                document.getElementById('statusHeading').innerText = "Downloading...";
-                document.getElementById('statusDetails').innerText = "Your secure binary download has initialized successfully.";
-            }, 500);
-
-            // Silently triggers the download in the background tray
-            const silentDownloader = document.createElement('a');
-            silentDownloader.href = targetLink;
-            silentDownloader.setAttribute('download', '');
-            document.body.appendChild(silentDownloader);
-            silentDownloader.click();
-            document.body.removeChild(silentDownloader);
-
-            // Bounces the user back to the store front after 3 seconds
-            setTimeout(() => {
-                window.location.href = "index.html";
-            }, 3000);
+                } else {
+                    setTimeout(() => {
+                        document.getElementById('statusHeading').innerText = "Downloading";
+                        document.getElementById('statusDetails').innerText = "Your secure binary download has initialized successfully. Check your browser folder.";
+                        window.location.href = targetLink;
+                    }, 1500);
                 }
+            } catch (err) {
                 window.location.href = "index.html";
             }
         }

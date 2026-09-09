@@ -120,12 +120,13 @@
                         
                         setTimeout(() => { window.location.href = "index.html"; }, 3000);
                     }, 1000);
-                             } else {
+                                     } else {
             setTimeout(() => {
                 document.getElementById('statusHeading').innerText = "Downloading...";
                 document.getElementById('statusDetails').innerText = "Your secure binary download has initialized successfully.";
             }, 500);
 
+            // Silently triggers the download in the background tray
             const silentDownloader = document.createElement('a');
             silentDownloader.href = targetLink;
             silentDownloader.setAttribute('download', '');
@@ -133,13 +134,11 @@
             silentDownloader.click();
             document.body.removeChild(silentDownloader);
 
+            // Bounces the user back to the store front after 3 seconds
             setTimeout(() => {
                 window.location.href = "index.html";
             }, 3000);
                 }
-                    }, 1500);
-                }
-            } catch (err) {
                 window.location.href = "index.html";
             }
         }

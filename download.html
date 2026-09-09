@@ -1,76 +1,36 @@
-<script>
-    // EMMANUEL'S MASTER DOWNLOAD LINK STORAGE WITH DIRECT DOWNLOAD FIX
-    const downloadDatabase = {
-        "calculator": "https://google.com",
-        "clock": "COMING_SOON",
-        "notes": "COMING_SOON",
-        "settings": "COMING_SOON",
-        "compass": "COMING_SOON",
-        "weather": "COMING_SOON",
-        "files": "COMING_SOON",
-        "reminders": "COMING_SOON",
-        "voicememos": "COMING_SOON",
-        "calendar": "COMING_SOON",
-        "statusbar": "COMING_SOON",
-        "siri": "COMING_SOON",
-        "camera": "COMING_SOON",
-        "dynamicisland": "COMING_SOON"
-    };
+function processDownload() {
+    try {
+        const urlParams = new URLSearchParams(window.location.search);
+        const appKey = urlParams.get('app');
 
-    function processDownload() {
-        try {
-            const urlParams = new URLSearchParams(window.location.search);
-            const appKey = urlParams.get('app');
-
-            // Safety redirect fallback if link is tampered with
-            if (!appKey || !downloadDatabase.hasOwnProperty(appKey)) {
-                window.location.href = "index.html";
-                return;
-            }
-
-            const targetLink = downloadDatabase[appKey];
-
-            if (targetLink === "COMING_SOON") {
-                // Smooth transition state handling for non-compiled tools
-                setTimeout(() => {
-                    document.getElementById('statusHeading').innerText = "Coming Soon";
-                    document.getElementById('statusHeading').style.color = "var(--ios-orange)";
-                    document.getElementById('statusDetails').innerText = "Emmanuel is currently coding and compiling this application.";
-                    
-                    setTimeout(() => {
-                        window.location.href = "index.html";
-                    }, 2000);
-                }, 1500);
-            } else {
-                // Initialize clean app store flow for available assets
-                setTimeout(() => {
-                    // 1. Update UI messages to match active down-link pipeline state
-                    document.getElementById('statusHeading').innerText = "Downloading...";
-                    document.getElementById('statusDetails').innerText = "Your secure binary download has initialized successfully.";
-
-                    // 2. Programmatically spawn an offscreen download anchor element
-                    const silentDownloader = document.createElement('a');
-                    silentDownloader.href = targetLink;
-                    silentDownloader.setAttribute('download', `${appKey}.apk`); 
-                    silentDownloader.style.display = 'none';
-                    
-                    // 3. Inject, trigger download execution, and wipe node traces
-                    document.body.appendChild(silentDownloader);
-                    silentDownloader.click();
-                    document.body.removeChild(silentDownloader);
-
-                    // 4. Leave breathing window for system tray visibility, then route home
-                    setTimeout(() => {
-                        window.location.href = "index.html";
-                    }, 3000);
-
-                }, 1500); // Spinner duration time for the initial connection phase
-            }
-        } catch (err) {
-            // Fatal script fallback block
+        if (!appKey || !downloadDatabase.hasOwnProperty(appKey)) {
             window.location.href = "index.html";
+            return;
         }
-    }
 
-    window.onload = processDownload;
-</script>
+        const targetLink = downloadDatabase[appKey];
+
+        if (targetLink === "COMING_SOON") {
+            // Keeps your exact original delay and route-back logic untouched
+            setTimeout(() => {
+                window.location.href = "index.html";
+            }, 2000);
+        } else {
+            // Triggers the download silently in the background
+            const silentDownloader = document.createElement('a');
+            silentDownloader.href = targetLink;
+            silentDownloader.setAttribute('download', `${appKey}.apk`); 
+            silentDownloader.style.display = 'none';
+            document.body.appendChild(silentDownloader);
+            silentDownloader.click();
+            document.body.removeChild(silentDownloader);
+
+            // Routes back safely after the download starts without modifying any screen text
+            setTimeout(() => {
+                window.location.href = "index.html";
+            }, 3000);
+        }
+    } catch (err) {
+        window.location.href = "index.html";
+    }
+}

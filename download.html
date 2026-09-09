@@ -2,97 +2,42 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>AndroidDevStore Secure Servers</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
     <style>
-        :root {
-            --ios-bg: #010102;
-            --ios-border: rgba(255, 255, 255, 0.08);
-            --ios-text-main: #ffffff;
-            --ios-text-sub: rgba(255, 255, 255, 0.55);
-            --ios-orange: #ff9f0a;
-            --sf-font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", sans-serif;
-        }
-
         body {
-            background: linear-gradient(135deg, #0d0e12 0%, #000000 100%);
-            color: var(--ios-text-main);
-            font-family: var(--sf-font);
+            background-color: #0d0e12;
+            color: #ffffff;
+            font-family: sans-serif;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
+            justify-content: center;
             height: 100vh;
             margin: 0;
-            overflow: hidden;
         }
-
-        .glass-card {
-            background: rgba(28, 28, 30, 0.75);
-            backdrop-filter: blur(30px);
-            -webkit-backdrop-filter: blur(30px);
-            border: 1px solid var(--ios-border);
-            border-radius: 24px;
-            padding: 40px 20px;
-            max-width: 320px;
-            width: 85%;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.6);
-            text-align: center;
-            box-sizing: border-box;
+        .spinner {
+            border: 4px solid rgba(255,255,255,0.1);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border-left-color: #ff9100;
+            animation: spin 1s linear infinite;
+            margin-bottom: 20px;
         }
-
-        .ios-spinner {
-            position: relative;
-            width: 44px;
-            height: 44px;
-            margin: 0 auto 24px;
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
-        .ios-spinner div {
-            position: absolute;
-            width: 10%;
-            height: 26%;
-            background: var(--ios-orange);
-            left: 44.5%;
-            top: 37%;
-            border-radius: 5px;
-            transform-origin: 50% 130%;
-            animation: ios-fade-loop 0.8s linear infinite;
-        }
-        .ios-spinner div:nth-child(1) { transform: rotate(0deg) translate(0, -130%); animation-delay: 0s; }
-        .ios-spinner div:nth-child(2) { transform: rotate(30deg) translate(0, -130%); animation-delay: -0.733s; }
-        .ios-spinner div:nth-child(3) { transform: rotate(60deg) translate(0, -130%); animation-delay: -0.666s; }
-        .ios-spinner div:nth-child(4) { transform: rotate(90deg) translate(0, -130%); animation-delay: -0.6s; }
-        .ios-spinner div:nth-child(5) { transform: rotate(120deg) translate(0, -130%); animation-delay: -0.533s; }
-        .ios-spinner div:nth-child(6) { transform: rotate(150deg) translate(0, -130%); animation-delay: -0.466s; }
-        .ios-spinner div:nth-child(7) { transform: rotate(180deg) translate(0, -130%); animation-delay: -0.4s; }
-        .ios-spinner div:nth-child(8) { transform: rotate(210deg) translate(0, -130%); animation-delay: -0.333s; }
-        .ios-spinner div:nth-child(9) { transform: rotate(240deg) translate(0, -130%); animation-delay: -0.266s; }
-        .ios-spinner div:nth-child(10) { transform: rotate(270deg) translate(0, -130%); animation-delay: -0.2s; }
-        .ios-spinner div:nth-child(11) { transform: rotate(300deg) translate(0, -130%); animation-delay: -0.133s; }
-        .ios-spinner div:nth-child(12) { transform: rotate(330deg) translate(0, -130%); animation-delay: -0.066s; }
-
-        @keyframes ios-fade-loop {
-            from { opacity: 1; }
-            to { opacity: 0.15; }
-        }
-
-        h2 { font-size: 20px; font-weight: 700; margin: 0 0 10px 0; letter-spacing: -0.4px; }
-        p { color: var(--ios-text-sub); font-size: 13px; line-height: 1.4; margin: 0; }
     </style>
 </head>
 <body>
 
-    <div class="glass-card">
-        <div class="ios-spinner" id="loadingSpinner">
-            <div></div><div></div><div></div><div></div>
-            <div></div><div></div><div></div><div></div>
-            <div></div><div></div><div></div><div></div>
-        </div>
-        <h2 id="statusHeading">Connecting...</h2>
-        <p id="statusDetails">Preparing secure handshake connection down-link to server grid.</p>
-    </div>
+    <div class="spinner"></div>
+    <h2 id="statusHeading">Connecting...</h2>
+    <p id="statusDetails">Preparing secure handshake connection down-link to server grid.</p>
 
     <script>
-        // --- MASTER DOWNLOAD LAYER STORAGE LINK ---
         const downloadDatabase = {
             "calculator": "https://google.com",
             "clock": "COMING_SOON",
@@ -116,56 +61,44 @@
                 const appKey = urlParams.get('app');
 
                 if (!appKey || !downloadDatabase.hasOwnProperty(appKey)) {
-                    window.location.replace("index.html");
+                    window.location.href = "index.html";
                     return;
                 }
 
                 const targetLink = downloadDatabase[appKey];
 
                 if (targetLink === "COMING_SOON") {
-                    document.getElementById('statusHeading').innerText = "Coming Soon";
-                    document.getElementById('statusHeading').style.color = "var(--ios-orange)";
-                    document.getElementById('statusDetails').innerText = "Emmanuel is currently coding and compiling this APK package.";
-                    
                     setTimeout(() => {
-                        window.location.replace("index.html");
-                    }, 3000);
+                        document.getElementById('statusHeading').innerText = "Coming Soon";
+                        document.getElementById('statusHeading').style.color = "#ff9100";
+                        document.getElementById('statusDetails').innerText = "Emmanuel is currently coding and compiling this APK package.";
+                    }, 500);
+
+                    setTimeout(() => {
+                        window.location.href = "index.html";
+                    }, 3500);
                 } else {
-                    // Update UI text nicely without redirecting out
+                    // Update layout status immediately while remaining on screen
                     setTimeout(() => {
                         document.getElementById('statusHeading').innerText = "Downloading...";
                         document.getElementById('statusDetails').innerText = "Your secure binary download has initialized successfully.";
                     }, 500);
 
-                    // True background memory block stream download link trick
-                    fetch(targetLink)
-                        .then(response => response.blob())
-                        .then(blob => {
-                            const blobUrl = window.URL.createObjectURL(blob);
-                            const silentDownloader = document.createElement('a');
-                            silentDownloader.href = blobUrl;
-                            silentDownloader.setAttribute('download', 'ios-calculator.apk');
-                            document.body.appendChild(silentDownloader);
-                            silentDownloader.click();
-                            
-                            document.body.removeChild(silentDownloader);
-                            window.URL.revokeObjectURL(blobUrl);
-                        })
-                        .catch(() => {
-                            // Fallback download action loop if strict permissions block fetch streams
-                            const fallbackDownloader = document.createElement('a');
-                            fallbackDownloader.href = targetLink;
-                            document.body.appendChild(fallbackDownloader);
-                            fallbackDownloader.click();
-                        });
+                    // FIXED ENGINE: Triggers the download silently in the background
+                    const silentDownloader = document.createElement('a');
+                    silentDownloader.href = targetLink;
+                    silentDownloader.setAttribute('download', '');
+                    document.body.appendChild(silentDownloader);
+                    silentDownloader.click();
+                    document.body.removeChild(silentDownloader);
 
-                    // Force clear history and loop straight back home while download stream runs
+                    // Cleanly returns home after the browser catches the download stream
                     setTimeout(() => {
-                        window.location.replace("index.html");
-                    }, 4000); 
+                        window.location.href = "index.html";
+                    }, 3000); 
                 }
             } catch (err) {
-                window.location.replace("index.html");
+                window.location.href = "index.html";
             }
         }
 

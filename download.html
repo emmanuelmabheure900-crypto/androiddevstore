@@ -1,13 +1,88 @@
+<!DOCTYPE html>
+<!-- 
+  ========================================================================
+  SECURE DISTRIBUTION ENDPOINT LICENSE PROMPT v2.6
+  ENGINEERED BY EMMANUEL MABHEURE | DOWNLOAD LAYER HANDSHAKE NODE
+  ========================================================================
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>AndroidDevStore Secure Servers</title>
+    <style>
+        :root {
+            --ios-bg: #000000;
+            --ios-border: rgba(255, 255, 255, 0.08);
+            --ios-text-main: #ffffff;
+            --ios-text-sub: rgba(255, 255, 255, 0.55);
+            --ios-orange: #ff9f0a;
+            --sf-font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0b0914 0%, #000000 100%);
+            color: var(--ios-text-main);
+            font-family: var(--sf-font);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        .glass-card {
+            background: rgba(28, 28, 30, 0.75);
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
+            border: 1px solid var(--ios-border);
+            border-radius: 24px;
+            padding: 40px 32px;
+            max-width: 320px;
+            width: 85%;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+        .ios-spinner { position: relative; width: 44px; height: 44px; margin: 0 auto 24px; }
+        .ios-spinner div { position: absolute; width: 10%; height: 26%; background: var(--ios-orange); left: 44.5%; top: 37%; opacity: 0; border-radius: 50px; animation: ios-fade-loop 1s linear infinite; }
+        .ios-spinner div:nth-child(1) { transform: rotate(0deg) translate(0, -130%); animation-delay: 0s; }
+        .ios-spinner div:nth-child(2) { transform: rotate(30deg) translate(0, -130%); animation-delay: -0.9167s; }
+        .ios-spinner div:nth-child(3) { transform: rotate(60deg) translate(0, -130%); animation-delay: -0.8333s; }
+        .ios-spinner div:nth-child(4) { transform: rotate(90deg) translate(0, -130%); animation-delay: -0.75s; }
+        .ios-spinner div:nth-child(5) { transform: rotate(120deg) translate(0, -130%); animation-delay: -0.6667s; }
+        .ios-spinner div:nth-child(6) { transform: rotate(150deg) translate(0, -130%); animation-delay: -0.5833s; }
+        .ios-spinner div:nth-child(7) { transform: rotate(180deg) translate(0, -130%); animation-delay: -0.5s; }
+        .ios-spinner div:nth-child(8) { transform: rotate(210deg) translate(0, -130%); animation-delay: -0.4167s; }
+        .ios-spinner div:nth-child(9) { transform: rotate(240deg) translate(0, -130%); animation-delay: -0.3333s; }
+        .ios-spinner div:nth-child(10) { transform: rotate(270deg) translate(0, -130%); animation-delay: -0.25s; }
+        .ios-spinner div:nth-child(11) { transform: rotate(300deg) translate(0, -130%); animation-delay: -0.1667s; }
+        .ios-spinner div:nth-child(12) { transform: rotate(330deg) translate(0, -130%); animation-delay: -0.0833s; }
+
+        @keyframes ios-fade-loop { from { opacity: 1; } to { opacity: 0.15; } }
+        h2 { font-size: 20px; font-weight: 700; margin: 0 0 10px 0; letter-spacing: -0.4px; }
+        p { color: var(--ios-text-sub); font-size: 13px; line-height: 1.4; margin: 0; }
+    </style>
+</head>
+<body>
+
+    <div class="glass-card">
+        <div class="ios-spinner" id="loadingSpinner">
+            <div></div><div></div><div></div><div></div>
+            <div></div><div></div><div></div><div></div>
+            <div></div><div></div><div></div><div></div>
+        </div>
+        <h2 id="statusHeading">Connecting...</h2>
+        <p id="statusDetails">Preparing secure handshake connection down-link to server grid.</p>
+    </div>
+
     <script>
-        // ==================================================
-        // ==================================================
-        // ====
+        // ========================================================================
         // EMMANUEL'S MASTER DOWNLOAD LINK STORAGE
         // When you upload a new APK, just delete "COMING_SOON" and paste your link!
-        //
-        // ==================================================
-        // ==================================================
-        // ====
+        // ========================================================================
         const downloadDatabase = {
             "calculator": "https://drive.google.com/file/d/16slk1OvSKIJd-JuCZjMPIBzIiPeQ22AG/view?usp=drivesdk",
             "clock": "COMING_SOON",
@@ -43,33 +118,20 @@
                         document.getElementById('statusHeading').style.color = "var(--ios-orange)";
                         document.getElementById('statusDetails').innerText = "Emmanuel is currently coding and compiling this APK package from scratch. Returning Home...";
                         
-                        setTimeout(() => {
-                            window.location.href = "index.html";
-                        }, 3000);
+                        setTimeout(() => { window.location.href = "index.html"; }, 3000);
                     }, 1000);
                 } else {
                     setTimeout(() => {
-                        document.getElementById('statusHeading').innerText = "Downloading...";
+                        document.getElementById('statusHeading').innerText = "Downloading";
                         document.getElementById('statusDetails').innerText = "Your secure binary download has initialized successfully. Check your browser folder.";
-
-                        // FIX: Spawns a silent transient window to force Google Drive's download handler
-                        const downloadWindow = window.open(targetLink, '_blank');
-                        
-                        // Safely closes the window context if the platform permits it
-                        if (downloadWindow) {
-                            setTimeout(() => { downloadWindow.close(); }, 500);
-                        }
-
-                        // Perfect routing loop back to your main app interface
-                        setTimeout(() => {
-                            window.location.href = "index.html";
-                        }, 3000);
+                        window.location.href = targetLink;
                     }, 1500);
                 }
             } catch (err) {
                 window.location.href = "index.html";
             }
         }
-
         window.onload = processDownload;
     </script>
+</body>
+</html>

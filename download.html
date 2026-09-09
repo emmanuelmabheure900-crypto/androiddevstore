@@ -29,11 +29,20 @@
 
             const targetLink = downloadDatabase[appKey];
 
+            // Safely fetch your UI elements if they exist
+            const headingEl = document.getElementById('statusHeading');
+            const detailsEl = document.getElementById('statusDetails');
+
             if (targetLink === "COMING_SOON") {
                 setTimeout(() => {
-                    document.getElementById('statusHeading').innerText = "Coming Soon";
-                    document.getElementById('statusHeading').style.color = "var(--ios-orange)";
-                    document.getElementById('statusDetails').innerText = "Emmanuel is currently coding and compiling this application.";
+                    // Only updates UI text if the IDs exist in your HTML
+                    if (headingEl) {
+                        headingEl.innerText = "Coming Soon";
+                        headingEl.style.color = "var(--ios-orange)";
+                    }
+                    if (detailsEl) {
+                        detailsEl.innerText = "Emmanuel is currently coding and compiling this application.";
+                    }
                     
                     setTimeout(() => {
                         window.location.href = "index.html";
@@ -41,10 +50,11 @@
                 }, 1500);
             } else {
                 setTimeout(() => {
-                    document.getElementById('statusHeading').innerText = "Downloading...";
-                    document.getElementById('statusDetails').innerText = "Your secure binary download has initialized successfully.";
+                    // Only updates UI text if the IDs exist in your HTML
+                    if (headingEl) headingEl.innerText = "Downloading...";
+                    if (detailsEl) detailsEl.innerText = "Your secure binary download has initialized successfully.";
 
-                    // FIX: Silent background download anchor so the user is never moved out of the web
+                    // Silent background download anchor so the user is never moved out of the web
                     const silentDownloader = document.createElement('a');
                     silentDownloader.href = targetLink;
                     silentDownloader.setAttribute('download', `${appKey}.apk`); 
@@ -65,5 +75,6 @@
         }
     }
 
-    window.onload = processDownload;
+    // Wait until everything is fully loaded before executing
+    window.addEventListener('DOMContentLoaded', processDownload);
 </script>

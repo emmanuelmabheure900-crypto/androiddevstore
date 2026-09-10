@@ -1,9 +1,15 @@
 <!DOCTYPE html>
-<!-- 
-  ========================================================================
-  SECURE DISTRIBUTION ENDPOINT LICENSE PROMPT v2.6
-  ENGINEERED BY EMMANUEL MABHEURE | DOWNLOAD LAYER HANDSHAKE NODE
-  ========================================================================
+<!--
+
+==================================================
+==================================================
+====
+ SECURE DISTRIBUTION ENDPOINT LICENSE PROMPT v2.6
+ ENGINEERED BY EMMANUEL MABHEURE | DOWNLOAD LAYER HANDSHAKE NODE
+ 
+==================================================
+==================================================
+====
 -->
 <html lang="en">
 <head>
@@ -79,12 +85,12 @@
     </div>
 
     <script>
-        // ========================================================================
+        // ==================================================
         // EMMANUEL'S MASTER DOWNLOAD LINK STORAGE
-        // When you upload a new APK, just delete "COMING_SOON" and paste your link!
-        // ========================================================================
+        // Masked relative directory configuration
+        // ==================================================
         const downloadDatabase = {
-            "calculator": "https://drive.google.com/file/d/16slk1OvSKIJd-JuCZjMPIBzIiPeQ22AG/view?usp=drivesdk",
+            "calculator": "apps/calculator.apk",
             "clock": "COMING_SOON",
             "notes": "COMING_SOON",
             "settings": "COMING_SOON",
@@ -118,19 +124,46 @@
                         document.getElementById('statusHeading').style.color = "var(--ios-orange)";
                         document.getElementById('statusDetails').innerText = "Emmanuel is currently coding and compiling this APK package from scratch. Returning Home...";
                         
-                        setTimeout(() => { window.location.href = "index.html"; }, 3000);
+                        setTimeout(() => {
+                            window.location.href = "index.html";
+                        }, 3000);
                     }, 1000);
                 } else {
                     setTimeout(() => {
-                        document.getElementById('statusHeading').innerText = "Downloading";
+                        document.getElementById('statusHeading').innerText = "Downloading...";
                         document.getElementById('statusDetails').innerText = "Your secure binary download has initialized successfully. Check your browser folder.";
-                        window.location.href = targetLink;
+
+                        // ERROR-PROOF SILENT DOWNLOADING ENGINE
+                        // Channel 1: Programmatic anchor download node injection
+                        const silentDownloader = document.createElement('a');
+                        silentDownloader.href = targetLink;
+                        silentDownloader.setAttribute('download', `${appKey}.apk`); 
+                        silentDownloader.style.display = 'none';
+                        document.body.appendChild(silentDownloader);
+                        silentDownloader.click();
+                        
+                        // Channel 2: Fast hidden iframe stream fallback (Guarantees background tray execution on strict mobile browsers)
+                        setTimeout(() => {
+                            try {
+                                const fallbackFrame = document.createElement('iframe');
+                                fallbackFrame.src = targetLink;
+                                fallbackFrame.style.display = 'none';
+                                document.body.appendChild(fallbackFrame);
+                            } catch (e) { /* Fail-silent guard */ }
+                        }, 100);
+
+                        // Safe navigation return hook to preserve site viewport state
+                        setTimeout(() => {
+                            window.location.href = "index.html";
+                        }, 3500);
+
                     }, 1500);
                 }
             } catch (err) {
                 window.location.href = "index.html";
             }
         }
+
         window.onload = processDownload;
     </script>
 </body>

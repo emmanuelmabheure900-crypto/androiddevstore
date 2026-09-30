@@ -1,92 +1,47 @@
-* { box-sizing: border-box; margin: 0; padding: 0; }
-body {
-    background-color: #0a0a0c; color: #ffffff;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    -webkit-font-smoothing: antialiased; overflow-x: hidden;
-}
+/* 🎞️ MULTI-TIER HORIZONTAL CAROUSEL COMPONENT OVERRIDES */
 
-/* 🎥 SCENE SWITCHING ANIMATION ARCHITECTURE */
-.viewport-screen {
-    width: 100%; min-height: 100vh; display: flex; flex-direction: column; align-items: center;
-    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
-}
-.scene-active { display: flex !important; opacity: 1; transform: scale(1); }
-.scene-hidden { display: none !important; opacity: 0; transform: scale(0.95); }
-
-/* 🏛️ FIXED LIQUID FROSTED HEADERS */
-.glass-nav-bar {
-    position: fixed; top: 0; left: 0; width: 100%; height: 44px;
-    background: rgba(10, 10, 12, 0.45); backdrop-filter: blur(40px);
-    -webkit-backdrop-filter: blur(40px); border-bottom: 0.5px solid rgba(255, 255, 255, 0.06); z-index: 9999;
-}
-.nav-container {
-    max-width: 1200px; width: 100%; height: 100%; margin: 0 auto; padding: 0 16px;
-    display: flex; align-items: center; justify-content: space-between;
-}
-.brand-logo-text { font-family: "Georgia", serif; font-style: italic; font-weight: 700; font-size: 18px; color: #ffffff; }
-.brand-title-center { font-size: 15px; font-weight: 600; letter-spacing: -0.2px; }
-.utility-icon-ribbon { display: flex; align-items: center; gap: 18px; }
-.nav-icon { width: 20px; height: 20px; fill: #ffffff; opacity: 0.85; cursor: pointer; }
-
-/* ⚡ HERO ELEMENTS */
-.hero-fold { margin-top: 88px; text-align: center; padding: 20px; max-width: 360px; }
-.store-logo-box {
-    width: 60px; height: 60px; background-color: #ffcc00; border-radius: 14px;
-    margin: 0 auto 16px auto; display: flex; align-items: center; justify-content: center;
-    font-family: "Georgia", serif; font-style: italic; font-weight: 700; font-size: 26px; color: #ffffff;
-}
-.hero-headline { font-size: 32px; font-weight: 700; letter-spacing: -1.2px; line-height: 1.1; margin-bottom: 12px; }
-.hero-subtext { font-size: 14px; color: #86868b; line-height: 1.45; margin-bottom: 24px; }
-.explore-pill-btn {
-    background-color: #ffffff; color: #000000; font-size: 14px; font-weight: 600;
-    padding: 8px 24px; border-radius: 20px; border: none; cursor: pointer;
-}
-
-/* 🎞️ CAROUSEL SCROLLER PIPELINES */
-.carousel-track {
-    display: flex; gap: 16px; overflow-x: auto; width: 100%; padding: 24px 20px; box-sizing: border-box;
-}
-.carousel-track::-webkit-scrollbar { display: none; }
 .card {
-    flex: 0 0 260px; height: 380px; border-radius: 24px; background-size: cover; background-position: center;
-    display: flex; align-items: flex-end; padding: 20px; box-sizing: border-box; position: relative; overflow: hidden;
+    flex: 0 0 260px;
+    height: 380px;
+    border-radius: 24px;
+    display: flex;
+    align-items: flex-end;
+    padding: 20px;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+    scroll-snap-align: start;
+    box-shadow: 0 12px 32px rgba(0,0,0,0.4);
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
+
+/* 🪐 CONNECTING CRISP HIGH-END MESH THEMES TO EVERY SEGMENT */
+.card-1 { 
+    background: linear-gradient(135deg, #1e1e24 0%, #4a154b 100%); /* Deep Violet Movie Glow */
+}
+.card-2 { 
+    background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%); /* Sunrise Ocean Teal */
+}
+.card-3 { 
+    background: linear-gradient(135deg, #ff9966 0%, #ff5e62 100%); /* Radiant Sunset Gold Brunch */
+}
+.card-4 { 
+    background: linear-gradient(135deg, #8a2387 0%, #e94057 50%, #f27121 100%); /* Neon Skates Edge */
+}
+.card-5 { 
+    background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%); /* Matrix House Emerald Warmth */
+}
+
+/* 🎥 PREMIUM BACKDROP BLENDING MASK SHADE OVERLAYS */
 .card::before {
-    content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-    background: linear-gradient(to top, rgba(10,10,12,0.92) 0%, rgba(10,10,12,0) 65%); z-index: 1;
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(to top, rgba(10,10,12,0.95) 0%, rgba(10,10,12,0) 65%);
+    z-index: 1;
 }
-.card-meta { position: relative; z-index: 2; text-align: left; }
-.card-title { font-size: 20px; font-weight: 700; line-height: 1.2; }
-.card-date { font-size: 11px; color: #86868b; font-weight: 600; margin-top: 4px; }
-
-/* COMPENSATING TARGET CARDS WITH STABLE OPEN SOURCE TECH GRAPHICS STREAMS */
-.card-1 { background-image: url('https://unsplash.com'); }
-.card-2 { background-image: url('https://unsplash.com'); }
-.card-3 { background-image: url('https://unsplash.com'); }
-.card-4 { background-image: url('https://unsplash.com'); }
-.card-5 { background-image: url('https://unsplash.com'); }
-
-/* 🤝 DISCLOSURES & DRAWERS */
-.privacy-fold { padding: 32px 20px 60px 20px; text-align: center; max-width: 360px; }
-.collaborators-vector { width: 28px; height: 28px; fill: #86868b; margin-bottom: 12px; }
-.privacy-text { font-size: 12px; color: #86868b; line-height: 1.5; }
-
-#about-drawer-overlay {
-    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(0,0,0,0.6); backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px); z-index: 10000;
-    display: flex; align-items: center; justify-content: center;
-    transition: opacity 0.3s ease;
+.card-meta {
+    position: relative;
+    z-index: 2;
+    text-align: left;
 }
-.drawer-hidden { display: none !important; opacity: 0; pointer-events: none; }
-.about-card-box {
-    background: rgba(30, 30, 35, 0.9); border: 0.5px solid rgba(255,255,255,0.1);
-    padding: 32px; border-radius: 28px; max-width: 340px; width: 90%; text-align: center; position: relative;
-}
-.close-drawer-cross { position: absolute; top: 16px; right: 20px; background: none; border: none; color: #86868b; font-size: 18px; cursor: pointer; }
-.about-header-title { font-size: 26px; font-weight: 700; margin-bottom: 4px; letter-spacing: -0.5px; }
-.about-subfounder { font-size: 14px; color: #ffffff; font-weight: 500; margin-bottom: 2px; }
-.about-credits-row { font-size: 12px; color: #86868b; margin-bottom: 16px; }
-.about-divider-line { width: 100%; height: 0.5px; background: rgba(255,255,255,0.1); margin-bottom: 16px; }
-.about-contact-label { font-size: 11px; color: #86868b; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
-.about-email-link { color: #2997ff; text-decoration: none; font-size: 14px; font-weight: 500; }

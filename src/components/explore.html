@@ -1,20 +1,17 @@
-<!-- ⚡ EXPLORE NAVIGATION ROUTER CONTROLLER -->
-<div class="explore-pill-box" style="margin-top: 24px;">
-    <button id="explore-trigger-pill" class="explore-pill-btn" style="background-color: #ffffff; color: #000000; font-size: 14px; font-weight: 600; padding: 8px 24px; border-radius: 20px; border: none; cursor: pointer; font-family: -apple-system, BlinkMacSystemFont, sans-serif; box-shadow: 0 4px 12px rgba(255,255,255,0.1); transition: transform 0.2s ease;">
+<!-- ⚡ SCALED UP ACTION CONTROLLER PILL WITH PRESS FEEDBACK -->
+<div class="explore-pill-box" style="margin-top: 24px; text-align: center;">
+    <button id="explore-trigger-pill" class="interactive-touch-feedback" style="background-color: #ffffff; color: #000000; font-size: 15px; font-weight: 600; padding: 12px 36px; border-radius: 24px; border: none; cursor: pointer; font-family: -apple-system, BlinkMacSystemFont, sans-serif; box-shadow: 0 4px 14px rgba(255,255,255,0.15); outline: none;">
         Explore
     </button>
 </div>
 
 <script>
-    // AUTOMATED CLIENT-SIDE VIEWPORT MOUNT ELEMENT SCENE ROUTER
     (function() {
         const trigger = document.getElementById('explore-trigger-pill');
         if (trigger) {
             trigger.addEventListener('click', () => {
-                // Direct interaction loop: Slingshots visibility over to the main app dashboard container
                 const landingView = document.getElementById('landing-scene-container');
                 const storeDashboard = document.getElementById('store-dashboard-view');
-                
                 if (landingView && storeDashboard) {
                     landingView.style.display = 'none';
                     storeDashboard.style.display = 'flex';

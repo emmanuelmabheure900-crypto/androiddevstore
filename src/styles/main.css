@@ -1,4 +1,4 @@
-/* 🪐 MOBILEME GLOBAL DESIGN SYSTEM CORES */
+/* 🪐 MOBILEME UNIVERSAL RESET & PURE PITCH-BLACK SKINS */
 
 * {
     box-sizing: border-box;
@@ -6,35 +6,29 @@
     padding: 0;
 }
 
-html, body {
-    background-color: #0a0a0c;
+body {
+    background-color: #000000 !important; /* Pure Pitch-Black Backing Layer */
     color: #ffffff;
-    width: 100%;
-    min-height: 100vh;
     overflow-x: hidden;
-}
-
-/* GLOBAL GRID FLEX ALIGNMENTS */
-.flex-center-col {
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
 }
 
-img, svg {
-    max-width: 100%;
-    height: auto;
-    display: block;
+/* 🖼️ HIGH-FIDELITY LANDING COMPONENT VIEWPORT BOUNDARY LOCK */
+.landing-chassis-wrapper {
+    width: 100%;
+    max-width: 430px; /* Constrains layout beautifully when desktop forced! */
+    margin: 0 auto;
+    padding: 0 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-button, a {
-    cursor: pointer;
-    text-decoration: none;
-    transition: all 0.24s cubic-bezier(0.16, 1, 0.3, 1);
+.component-container-box {
+    width: 100%;
+    margin-bottom: 24px;
 }
-
-button:active, a:active {
-    transform: scale(0.97);
-}
-

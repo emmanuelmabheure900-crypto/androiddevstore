@@ -1,0 +1,27 @@
+/* 🍏 SAN FRANCISCO DESIGN SYSTEM TYPOGRAPHY IMPORT MATRIX */
+
+@import url('https://googleapis.com');
+
+.luxury-headline {
+    font-family: 'Inter', -apple-system, sans-serif;
+    font-size: 32px !important;
+    font-weight: 700 !important;
+    letter-spacing: -1.2px !important;
+    line-height: 1.1 !important;
+    color: #ffffff !important;
+}
+
+.luxury-subtext {
+    font-family: 'Inter', -apple-system, sans-serif;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    color: #86868b !important;
+    line-height: 1.45 !important;
+}
+
+.brand-font-left {
+    font-family: 'Inter', -apple-system, sans-serif;
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    letter-spacing: -0.3px !important;
+}

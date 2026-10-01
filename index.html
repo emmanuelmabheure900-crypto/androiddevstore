@@ -2,139 +2,135 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MobileMe - AndroidDevStore</title>
-    <style>
-        /* 🪐 SEQUENTIAL RE-CONSTRAINTS OVERRIDES */
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-        body {
-            background-color: #0a0a0c;
-            color: #ffffff;
-            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, sans-serif;
-            -webkit-font-smoothing: antialiased;
-            overflow-x: hidden;
-        }
-        .viewport-screen {
-            width: 100%;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .scene-active { display: flex !important; opacity: 1; }
-        .scene-hidden { display: none !important; opacity: 0; }
-        .glass-nav-bar {
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 44px;
-            background: rgba(10, 10, 12, 0.45);
-            backdrop-filter: blur(40px);
-            -webkit-backdrop-filter: blur(40px);
-            border-bottom: 0.5px solid rgba(255, 255, 255, 0.06);
-            z-index: 9999;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .brand-title-center {
-            font-size: 15px;
-            font-weight: 600;
-            letter-spacing: -0.2px;
-            color: #ffffff;
-        }
-        .hero-fold {
-            margin-top: 88px; text-align: center; padding: 20px; max-width: 360px;
-        }
-        .store-logo-box {
-            width: 60px; height: 60px; background-color: #ffcc00; border-radius: 14px;
-            margin: 0 auto 16px auto; display: flex; align-items: center; justify-content: center;
-            font-family: "Georgia", serif; font-style: italic; font-weight: 700; font-size: 26px; color: #ffffff;
-            box-shadow: 0 4px 14px rgba(255, 204, 0, 0.25);
-        }
-        .hero-headline {
-            font-size: 32px; font-weight: 700; letter-spacing: -1.2px; line-height: 1.1; margin-bottom: 12px; color: #ffffff;
-        }
-        .hero-subtext { font-size: 14px; color: #86868b; line-height: 1.45; margin-bottom: 24px; }
-        .explore-pill-btn {
-            display: inline-block; background-color: #ffffff; color: #000000; font-size: 14px; font-weight: 600;
-            padding: 8px 24px; border-radius: 20px; border: none; cursor: pointer; text-decoration: none;
-        }
-        .carousel-track {
-            display: flex; gap: 16px; overflow-x: auto; width: 100%; padding: 24px 20px; box-sizing: border-box;
-            scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch;
-        }
-        .carousel-track::-webkit-scrollbar { display: none; }
-        .card {
-            flex: 0 0 260px; height: 380px; border-radius: 24px; background-size: cover; background-position: center;
-            display: flex; align-items: flex-end; padding: 20px; box-sizing: border-box; position: relative; overflow: hidden; scroll-snap-align: start; box-shadow: 0 12px 32px rgba(0,0,0,0.4);
-        }
-        .card::before {
-            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            background: linear-gradient(to top, rgba(10,10,12,0.92) 0%, rgba(10,10,12,0) 65%); z-index: 1;
-        }
-        .card-meta { position: relative; z-index: 2; text-align: left; }
-        .card-title { font-size: 20px; font-weight: 700; color: #ffffff; line-height: 1.2; }
-        .card-date { font-size: 11px; color: #86868b; font-weight: 600; margin-top: 4px; }
-        .card-1 { background: linear-gradient(135deg, #1e1e24 0%, #4a154b 100%); }
-        .card-2 { background: linear-gradient(135deg, #0f2027 0%, #2c5364 100%); }
-        .card-3 { background: linear-gradient(135deg, #ff9966 0%, #ff5e62 100%); }
-        .card-4 { background: linear-gradient(135deg, #8a2387 0%, #f27121 100%); }
-        .card-5 { background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%); }
-        .privacy-fold { padding: 32px 20px 60px 20px; text-align: center; max-width: 360px; display: flex; flex-direction: column; align-items: center; }
-        .collaborators-vector { width: 32px !important; height: 32px !important; max-width: 32px !important; max-height: 32px !important; fill: #86868b !important; margin-bottom: 12px !important; display: block !important; }
-        .privacy-text { font-size: 12px; color: #86868b; line-height: 1.5; font-weight: 500; }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>AndroidDevStore</title>
+    <!-- TWIN UNIVERSAL SKINS IMPORTS -->
+    <link rel="stylesheet" href="./src/styles/fonts.css">
+    <link rel="stylesheet" href="./src/styles/main.css">
 </head>
 <body>
-    <header class="glass-nav-bar"><div class="brand-title-center">MobileMe</div></header>
-    <div id="app-viewport-wrapper">
-        <section id="landing-stage" class="viewport-screen scene-active">
-            <div class="hero-fold">
-                <div class="store-logo-box">Me</div>
-                <h1 class="hero-headline">Welcome to<br>AndroidDevStore</h1>
-                <p class="hero-subtext">Explore custom cross-system utility layers and advanced execution script engines.</p>
-                <button id="explore-trigger" class="explore-pill-btn">Explore</button>
+
+    <!-- COMPONENT 1 MOUNT POINT: DYNAMIC HEADER NAVIGATION -->
+    <div id="header-root-mount"></div>
+
+    <!-- MAIN VIEWPORT MANAGEMENT WRAPPER (FORCES COMPRESSION LIMITS ON DESKTOP SETTINGS) -->
+    <div class="landing-chassis-wrapper" style="padding-top: 64px;">
+        
+        <!-- VISUAL SCENE AXIS 1: THE BRAND NEW ONBOARDING LANDING CANVAS -->
+        <div id="landing-scene-container" style="width: 100%; display: flex; flex-direction: column; align-items: center;">
+            
+            <!-- COMPONENT 2 MOUNT POINT: DYNAMIC APP ENVELOPE ACCENT EMBLEM -->
+            <div id="icon-root-mount" class="component-container-box"></div>
+
+            <!-- HARDCODED PRIMARY INTRO PITCH FOLD TEXT COPY LINES -->
+            <div class="component-container-box" style="padding: 0 10px;">
+                <h1 class="luxury-headline" style="margin-bottom: 12px;">Welcome to<br>AndroidDevStore</h1>
+                <p class="luxury-subtext">Create beautiful system profiles for all your devices. Anyone can receive scripts. Deployment included with MobileMe+.</p>
             </div>
-            <div class="carousel-track">
-                <div class="card card-1"><div class="card-meta"><div class="card-title">Movie Night<br>Premiere</div><div class="card-date">Sat, July 11</div></div></div>
-                <div class="card card-2"><div class="card-meta"><div class="card-title">Sunrise Yoga<br>Class</div><div class="card-date">Wed, July 22</div></div></div>
-                <div class="card card-3"><div class="card-meta"><div class="card-title">Surprise Brunch<br>for Mom</div><div class="card-date">Mon, May 18</div></div></div>
-                <div class="card card-4"><div class="card-meta"><div class="card-title">Skates On,<br>Dance Off</div><div class="card-date">Mon, August 17</div></div></div>
-                <div class="card card-5"><div class="card-meta"><div class="card-title">Housewarming<br>Party</div><div class="card-date">Wed, September 2</div></div></div>
+
+            <!-- COMPONENT 3 MOUNT POINT: DYNAMIC EXPLORE SCENE TRIGGER PILL -->
+            <div id="explore-root-mount" class="component-container-box"></div>
+
+            <!-- COMPONENT 4 MOUNT POINT: FEATURED SHOWCASE PHOTO (CLIPS HORIZONTALLY ON WIDE MONITORS) -->
+            <div id="people-root-mount" class="component-container-box"></div>
+
+            <!-- HARDCODED DETAILED PLATFORM UTILITIES OPERATIONAL DESCRIPTION -->
+            <div class="component-container-box" style="padding: 0 16px; margin-top: 16px; text-align: left;">
+                <h3 class="luxury-title-small" style="font-size: 18px; font-weight: 700; margin-bottom: 8px; color: #ffffff;">Get the Utility Suite Started</h3>
+                <p class="luxury-subtext" style="font-size: 13px; line-height: 1.5;">Customize your un-rooted environment tracking loops with a curated performance profile or background shell script of your own choice. You can even inject wireless debugging capabilities, automated terminal hooks, and isolated execution packages directly into your host device array.</p>
             </div>
-            <footer class="privacy-fold">
-                <svg class="collaborators-vector" viewBox="0 0 24 24">
-                    <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 1.34 5 3s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
-                </svg>
-                <p class="privacy-text">MobileMe provides tailored optimization modules and secure app distribution pipelines for normal users, advanced users with locked or unlocked bootloaders, and fully rooted environments. All background script wires are execution-isolated to guarantee absolute private data layer encryption.</p>
+
+            <!-- HARDCODED ACCORDION INTERACTIVE DROPDOWN FAQ FIELD BLOCK FRAME -->
+            <div class="component-container-box" style="text-align: left; padding: 24px 16px; border-top: 0.5px solid rgba(255,255,255,0.1); margin-top: 32px;">
+                <h2 class="luxury-title-small" style="font-size: 22px; font-weight: 700; margin-bottom: 24px; color: #ffffff;">Questions? Answered.</h2>
+                
+                <!-- FAQ CELL 1 -->
+                <div class="faq-row-item" style="padding: 16px 0; border-bottom: 0.5px solid rgba(255,255,255,0.08); cursor: pointer;" onclick="toggleFaqAccordionTrack(this)">
+                    <div style="display: flex; justify-content: space-between; align-items: center; font-weight: 600; font-size: 15px; color: #ffffff;">
+                        <span>How do I get AndroidDevStore?</span><span class="faq-chevron">＋</span>
+                    </div>
+                    <div class="faq-answer-panel" style="display: none; padding-top: 8px; font-size: 13px; color: #86868b; line-height: 1.45;">
+                        AndroidDevStore is accessible instantly over our live web URL profile interface, providing fast deployment pipelines for custom non-root system scripts.
+                    </div>
+                </div>
+
+                <!-- FAQ CELL 2 -->
+                <div class="faq-row-item" style="padding: 16px 0; border-bottom: 0.5px solid rgba(255,255,255,0.08); cursor: pointer;" onclick="toggleFaqAccordionTrack(this)">
+                    <div style="display: flex; justify-content: space-between; align-items: center; font-weight: 600; font-size: 15px; color: #ffffff;">
+                        <span>How do I send shell parameters?</span><span class="faq-chevron">＋</span>
+                    </div>
+                    <div class="faq-answer-panel" style="display: none; padding-top: 8px; font-size: 13px; color: #86868b; line-height: 1.45;">
+                        It's simple. Tap Explore to load the central mobile workspace application matrix, select your utility package tool, and execute the backend terminal handshake securely.
+                    </div>
+                </div>
+
+                <!-- FAQ CELL 3 -->
+                <div class="faq-row-item" style="padding: 16px 0; border-bottom: 0.5px solid rgba(255,255,255,0.08); cursor: pointer;" onclick="toggleFaqAccordionTrack(this)">
+                    <div style="display: flex; justify-content: space-between; align-items: center; font-weight: 600; font-size: 15px; color: #ffffff;">
+                        <span>Do invitees need a rooted hardware profile?</span><span class="faq-chevron">＋</span>
+                    </div>
+                    <div class="faq-answer-panel" style="display: none; padding-top: 8px; font-size: 13px; color: #86868b; line-height: 1.45;">
+                        The platform is optimized for everyone. Device profiles do not need active superuser privileges or unlocked bootloader configs to trigger standard wireless terminal bridges.
+                    </div>
+                </div>
+            </div>
+
+            <!-- HARDCODED RECONCILIATION BRAND FOOTER -->
+            <footer style="width: 100%; padding: 40px 16px 60px 16px; border-top: 0.5px solid rgba(255,255,255,0.1); text-align: left; font-size: 11px; color: #86868b; line-height: 1.4;">
+                <p style="margin-bottom: 8px;">System Status &nbsp;|&nbsp; Privacy Policy &nbsp;|&nbsp; Terms & Conditions</p>
+                <p>Copyright © 2026 MobileMe Inc. All rights reserved. AndroidDevStore and execution modules are engineered independently.</p>
             </footer>
-        </section>
-        <section id="store-stage" class="viewport-screen scene-hidden">
-            <div class="hero-fold" style="margin-top: 100px;">
-                <h2 class="hero-headline">Developer Applications</h2>
-                <p class="hero-subtext">Select an advanced rootless engineering module to deploy.</p>
-                <button id="exit-store-trigger" class="explore-pill-btn" style="background-color: #f5f5f7; color: #0071e3;">Back to Landing</button>
-            </div>
-        </section>
+        </div>
+
+        <!-- VISUAL SCENE AXIS 2: THE HOVERING SECONDARY REAL STOREFRONT INTERFACE (HIDDEN AT BOOT) -->
+        <div id="store-dashboard-view" style="width: 100%; display: none; flex-direction: column; align-items: center; padding-top: 40px;">
+            <h2 class="luxury-headline" style="font-size: 26px; margin-bottom: 8px;">Developer Dashboard</h2>
+            <p class="luxury-subtext" style="margin-bottom: 24px;">Your advanced mobile system management portal is fully active.</p>
+            <button onclick="location.reload()" style="background: #2c2c2e; color: #ffffff; border: none; padding: 8px 20px; border-radius: 20px; font-weight: 600; font-size: 13px;">Disconnect</button>
+        </div>
     </div>
+
+    <!-- REUSABLE COMPONENT ASYNCHRONOUS INJECTION ENGINE SCRIPT -->
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const landingScene = document.getElementById('landing-stage');
-            const storeScene = document.getElementById('store-stage');
-            document.getElementById('explore-trigger').addEventListener('click', () => {
-                landingScene.style.display = 'none';
-                storeScene.style.display = 'flex';
-                window.scrollTo(0, 0);
-            });
-            document.getElementById('exit-store-trigger').addEventListener('click', () => {
-                storeScene.style.display = 'none';
-                landingScene.style.display = 'flex';
-                window.scrollTo(0, 0);
-            });
-        });
+        async function compileMobileMeLayoutLayers() {
+            const paths = {
+                header: './src/components/Header.html',
+                icon: './src/components/AppIcon/index.html',
+                explore: './src/components/explore.html',
+                people: './src/components/MePeople/index.html'
+            };
+
+            try {
+                // Execute simultaneous text parsing handshakes over your repository fragments
+                const [hRes, iRes, eRes, pRes] = await Promise.all([
+                    fetch(paths.header), fetch(paths.icon), fetch(paths.explore), fetch(paths.people)
+                ]);
+
+                // Inject markup files right into their designated shell slots
+                document.getElementById('header-root-mount').innerHTML = await hRes.text();
+                document.getElementById('icon-root-mount').innerHTML = await iRes.text();
+                document.getElementById('explore-root-mount').innerHTML = await eRes.text();
+                document.getElementById('people-root-mount').innerHTML = await pRes.text();
+
+            } catch (err) {
+                console.error("⚠️ MobileMe Assembly Engine Route Error: ", err);
+            }
+        }
+
+        // ACCORDION DROPDOWN OPEN/CLOSE LOGIC SWITCH
+        function toggleFaqAccordionTrack(element) {
+            const answer = element.querySelector('.faq-answer-panel');
+            const chevron = element.querySelector('.faq-chevron');
+            if (answer.style.display === 'none' || answer.style.display === '') {
+                answer.style.display = 'block';
+                chevron.textContent = '－';
+            } else {
+                answer.style.display = 'none';
+                chevron.textContent = '＋';
+            }
+        }
+
+        window.addEventListener('DOMContentLoaded', compileMobileMeLayoutLayers);
     </script>
 </body>
 </html>

@@ -5,18 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>AndroidDevStore</title>
     <style>
-        /* 🍏 ACCURATE IOS TYPOGRAPHY SCALARS & PURE PITCH-BLACK CORE OVERRIDES */
+        /* 🍏 ACCURATE IOS SYSTEM TYPOGRAPHY OVERRIDES & SOLID BLACK CORES */
         * { box-sizing: border-box; margin: 0; padding: 0; }
         
         body {
-            background-color: #000000 !important; /* Forces solid pitch-black theme across the chassis */
+            background-color: #000000 !important; /* Locks theme to pure luxury pitch-black */
             color: #ffffff !important;
             font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", sans-serif !important;
             -webkit-font-smoothing: antialiased;
             overflow-x: hidden; width: 100%; display: flex; flex-direction: column; align-items: center;
         }
 
-        /* 🏛️ ULTRA-GLASSY TRANSLUCENT HEADER BAR */
+        /* 🏛️ ULTRA-GLASSY TRANSLUCENT NAVIGATION BAR */
         .glass-nav-bar {
             position: fixed; top: 0; left: 0; width: 100%; height: 44px;
             background: rgba(10, 10, 12, 0.25); backdrop-filter: blur(40px) saturate(210%);
@@ -27,13 +27,13 @@
         .brand-white { color: #ffffff; }
         .brand-orange { color: #ff9f0a; }
 
-        /* HORIZONTAL THREE DOT GLYPH WITH PRESSED MICROSURFACES */
+        /* HORIZONTAL THREE DOTS MENU BUTTON GLYPH WITH PRESSED TRANSFORMS */
         .three-dots-horizontal-btn {
             background: none; border: none; color: #ffffff; font-size: 20px; font-weight: 700;
             cursor: pointer; padding: 4px; display: flex; align-items: center; justify-content: center; outline: none;
         }
 
-        /* 👤 SLEEK TINY ABOUT LINK POPOVER BLOCK */
+        /* 👤 RE-CALIBRATED ABOUT DRAWERS LINK DROPDOWN MENU */
         .popover-card-box {
             position: fixed; top: 50px; right: 16px; background: rgba(28, 28, 30, 0.95);
             border: 0.5px solid rgba(255, 255, 255, 0.1); border-radius: 12px; padding: 6px 14px;
@@ -43,62 +43,63 @@
         .popover-link-small {
             color: #007aff !important; text-decoration: none; font-size: 13px; font-weight: 600; display: inline-block;
         }
-        /* 📐 VIEWPORT BOUNDARY LOCKS FORCING DESKTOP CLIP CUTOUTS NATIVELY */
+        /* 📐 COMPACT STRUCTURAL FRAME CONSTRAINT (STOPS SCREEN STRETCHING) */
         .landing-chassis-wrapper {
-            width: 100%; max-width: 430px; margin: 0 auto; padding-top: 64px;
+            width: 100%; max-width: 360px; margin: 0 auto; padding-top: 64px;
             display: flex; flex-direction: column; align-items: center; text-align: center;
         }
         .component-container-box { width: 100%; margin-bottom: 24px; }
         .luxury-headline { font-size: 32px; font-weight: 700; letter-spacing: -1.2px; line-height: 1.1; margin-bottom: 12px; }
         .luxury-subtext { font-size: 14px; color: #86868b; line-height: 1.45; font-weight: 500; }
 
-        /* ⚡ BIGGER HIGHER-CONTRAST EXPLORE ACTION CONTROLLER PILL */
+        /* ⚡ BIGGER HIGHER-CONTRAST EXPLORE CAPSULE PILL BUTTON */
         .explore-pill-btn-scaled {
             background-color: #ffffff; color: #000000; font-size: 16px; font-weight: 600;
             padding: 12px 40px; border-radius: 24px; border: none; cursor: pointer; outline: none;
             box-shadow: 0 4px 14px rgba(255,255,255,0.15); display: inline-block; text-decoration: none;
         }
 
-        /* 🖼️ FULL SCREEN EDGE-TO-EDGE UNSHADED PREVIEW CONTAINER OVERLAY */
+        /* 🖼️ PERFECT SLIDER IMAGE WRAPPER: ELIMINATES SIDE OFF-COLORS & BOTTOM SHADES COMPLETELY */
         .full-screen-card-frame {
-            width: 100vw; margin-left: calc(-50vw + 50%); height: auto; min-height: 380px;
-            overflow: hidden; margin-top: 24px; margin-bottom: 24px; display: flex;
+            width: 100%; max-width: 360px; height: 380px; border-radius: 24px;
+            overflow: hidden; margin: 24px auto; display: flex;
             align-items: center; justify-content: center; background-color: #000000;
+            box-shadow: 0 12px 32px rgba(0,0,0,0.5);
         }
 
-        /* TACTILE TOUCH REACTIONS GENERATING SEAMLESS PRESSED PACKS */
+        /* TACTILE MICROSURFACE TOUCH TRANSFORMS */
         .interactive-scale-feedback { transition: transform 0.1s ease, opacity 0.1s ease; }
         .interactive-scale-feedback:active { transform: scale(0.94) !important; opacity: 0.75 !important; }
 
-        /* ACCORDION RE-REGULATORS */
-        .faq-block-section { text-align: left; padding: 24px 16px; border-top: 0.5px solid rgba(255,255,255,0.1); width: 100%; }
+        /* ACCORDION FAQ REGULATORS */
+        .faq-block-section { text-align: left; padding: 24px 0; border-top: 0.5px solid rgba(255,255,255,0.1); width: 100%; }
         .faq-cell-row { padding: 16px 0; border-bottom: 0.5px solid rgba(255,255,255,0.08); cursor: pointer; }
         
-        /* REAL TAPPABLE WHITE FOOTER NAVIGATION METRICS (NOT BLUE!) */
-        .tappable-footer-anchor { color: #86868b !important; text-decoration: none; font-weight: 500; }
+        /* REAL TAPPABLE GREY FOOTER LINK LABELS (NOT BLUE) */
+        .tappable-footer-anchor { color: #86868b !important; text-decoration: none; font-size: 12px; font-weight: 600; }
         .tappable-footer-anchor:hover { color: #ffffff !important; }
     </style>
 </head>
 <body>
 
-    <!-- NAV STRIP COMPONENT LAYER -->
+    <!-- NAV BAR WRAPPER -->
     <header class="glass-nav-bar">
         <div class="brand-font-left"><span class="brand-white">Android</span><span class="brand-orange">DevStore</span></div>
         <button id="dots-horizontal-trigger" class="three-dots-horizontal-btn interactive-scale-feedback">⋯</button>
     </header>
 
-    <!-- POPOVER DROPDOWN CONTROLLER -->
+    <!-- POPOVER DROPDOWN CONTAINER -->
     <div id="popover-dropdown-drawer" class="popover-card-box">
-        <!-- SPACE RESERVED NATIVELY FOR YOU TO INSERT PORTFOLIO WEB LINKS -->
+        <!-- LINK SPACE FOR PORTFOLIO REDIRECTS -->
         <a href="https://your-about-site-link-goes-here.com" target="_blank" class="popover-link-small interactive-scale-feedback">About</a>
     </div>
     <div class="landing-chassis-wrapper">
         <div id="landing-scene-container" style="width: 100%; display: flex; flex-direction: column; align-items: center;">
             
-            <!-- SYSTEM APP ICON ROW LINKED NATIVELY TO YOUR INSTALLED SVG VECTOR IMAGE FILE -->
+            <!-- SYSTEM LOGO BLOCK BINDING DIRECTLY TO YOUR INSTALLED SVG GRAPHIC FILE -->
             <div class="component-container-box">
                 <div style="width: 80px; height: 80px; margin: 0 auto; display: flex; align-items: center; justify-content: center;">
-                    <img src="./src/components/AppIcon/family-brunch.svg" alt="AndroidDevStore App Core Logo" style="width: 100%; height: 100%; object-fit: contain; display: block;">
+                    <img src="./src/components/AppIcon/family-brunch.svg" alt="AndroidDevStore Core Vector Logo" style="width: 100%; height: 100%; object-fit: contain; display: block;">
                 </div>
             </div>
 
@@ -107,17 +108,17 @@
                 <p class="luxury-subtext">Create beautiful system profiles for all your devices. Anyone can receive scripts. Deployment included with MobileMe+.</p>
             </div>
 
-            <!-- UPSCALED ACTION PILL INTERFACE TERMINAL -->
+            <!-- UPSCALED ACTION CONTROL PILL -->
             <div class="component-container-box">
                 <button id="explore-trigger-pill" class="explore-pill-btn-scaled interactive-scale-feedback">Explore</button>
             </div>
 
-            <!-- COMPONENT 4 SHOWCASE ELEMENT: FORCED FULL-WIDTH BLEED WITH ZERO MASK SHADING -->
+            <!-- PERFECTED CARD CONTAINER: ZERO MASK SHADING, LOCKS NATIVE PHOTO SPACE CLIPS -->
             <div class="full-screen-card-frame">
-                <img src="./src/components/MePeople/family-brunch.jpg" alt="Featured Image Asset Container" style="width: 100%; height: 100%; object-fit: cover; display: block; max-height: 460px;">
+                <img src="./src/components/MePeople/family-brunch.jpg" alt="Featured Production Asset Container" style="width: 100%; height: 100%; object-fit: cover; display: block;">
             </div>
 
-            <div class="component-container-box" style="padding: 0 16px; margin-top: 16px; text-align: left;">
+            <div class="component-container-box" style="padding: 0 4px; margin-top: 16px; text-align: left;">
                 <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 8px; color: #ffffff; letter-spacing: -0.4px;">Get the Utility Suite Started</h3>
                 <p class="luxury-subtext" style="font-size: 13px; line-height: 1.5;">Customize your un-rooted environment tracking loops with a curated performance profile or background shell script of your own choice. You can even inject wireless debugging capabilities, automated terminal hooks, and isolated execution packages directly into your host device array.</p>
             </div>
@@ -138,22 +139,22 @@
                 </div>
             </div>
 
-            <!-- CRITICAL RE-ALIGNMENT: FOUNDER INFORMATION NODE ELEMENT BALANCED RIGHT ABOVE THE BASE FOLD -->
-            <div class="component-container-box" style="padding: 32px 16px 8px 16px; text-align: left; border-top: 0.5px solid rgba(255,255,255,0.05);">
+            <!-- BRAND EXECUTIVE FOUNDER CARD BLOCK -->
+            <div class="component-container-box" style="padding: 32px 0 8px 0; text-align: left; border-top: 0.5px solid rgba(255,255,255,0.05);">
                 <p style="font-size: 15px; font-weight: 700; color: #ffffff; letter-spacing: -0.2px;">Founded by Emmanuel Mabheure</p>
                 <p style="font-size: 12px; color: #86868b; margin-top: 2px; font-weight: 500;">Engineered by Emmanuel Mabheure and the MobileMe Team</p>
             </div>
 
-            <!-- COMPACT RECONCILIATION TAPPABLE WHITE FOOTER TRACK MATRIX WITH REAL HYPERLINK MARGIN GAPS -->
-            <footer style="width: 100%; padding: 24px 16px 60px 16px; border-top: 0.5px solid rgba(255,255,255,0.1); text-align: left; font-size: 12px; color: #86868b; line-height: 1.6;">
-                <div style="margin-bottom: 12px; display: flex; flex-wrap: wrap; gap: 16px; font-weight: 600;">
+            <!-- 🏛️ FIXED ALIGNMENT LOCK: BALANCED ROW FOOTER INTERFACE MATRIX WITH EVEN GAPS -->
+            <footer style="width: 100%; padding: 24px 0 60px 0; border-top: 0.5px solid rgba(255,255,255,0.1); text-align: left; line-height: 1.6;">
+                <div style="margin-bottom: 14px; display: flex; flex-direction: row; justify-content: flex-start; align-items: center; gap: 12px; width: 100%;">
                     <a href="https://your-system-status-site.com" target="_blank" class="tappable-footer-anchor interactive-scale-feedback">System Status</a>
-                    <span style="color: rgba(255,255,255,0.15);">|</span>
+                    <span style="color: rgba(255,255,255,0.12); font-size: 11px;">|</span>
                     <a href="https://your-privacy-policy-site.com" target="_blank" class="tappable-footer-anchor interactive-scale-feedback">Privacy Policy</a>
-                    <span style="color: rgba(255,255,255,0.15);">|</span>
+                    <span style="color: rgba(255,255,255,0.12); font-size: 11px;">|</span>
                     <a href="https://your-terms-site.com" target="_blank" class="tappable-footer-anchor interactive-scale-feedback">Terms & Conditions</a>
                 </div>
-                <p style="font-weight: 400; opacity: 0.75; font-size: 11px;">Copyright © 2026 MobileMe Inc. All rights reserved. AndroidDevStore and execution modules are engineered independently.</p>
+                <p style="font-weight: 400; opacity: 0.7; font-size: 11px; color: #86868b; text-align: left;">Copyright © 2026 MobileMe Inc. All rights reserved. AndroidDevStore and execution modules are engineered independently.</p>
             </footer>
         </div>
 
@@ -164,7 +165,7 @@
         </div>
     </div>
 
-    <!-- CORE LOGIC REGULATING CLICK ACTIONS & VIEWPORT TOGGLES -->
+    <!-- CODE SCRIPTS -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const dotsBtn = document.getElementById('dots-horizontal-trigger');
@@ -173,7 +174,6 @@
             const landingView = document.getElementById('landing-scene-container');
             const storeDashboard = document.getElementById('store-dashboard-view');
 
-            // 1. Toggle popover visibility on horizontal dots clicks
             if (dotsBtn && popoverMenu) {
                 dotsBtn.addEventListener('click', (e) => {
                     e.stopPropagation();
@@ -182,7 +182,6 @@
                 document.addEventListener('click', () => { popoverMenu.style.display = 'none'; });
             }
 
-            // 2. Upscaled Explore navigation trigger routing logic
             if (exploreBtn && landingView && storeDashboard) {
                 exploreBtn.addEventListener('click', () => {
                     landingView.style.display = 'none';
@@ -192,7 +191,6 @@
             }
         });
 
-        // FAQ DROPDOWN SWITCHER
         function toggleFaqAccordionTrack(element) {
             const answer = element.querySelector('.faq-answer-panel');
             const chevron = element.querySelector('.faq-chevron');

@@ -1,34 +1,19 @@
-/* 🪐 MOBILEME UNIVERSAL RESET & PURE PITCH-BLACK SKINS */
-
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+/* 🪐 TACTILE TOUCH FEEDBACK TRANSFORMATION RULES */
+.interactive-touch-feedback {
+    transition: transform 0.15s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.15s ease !important;
 }
 
-body {
-    background-color: #000000 !important; /* Pure Pitch-Black Backing Layer */
-    color: #ffffff;
-    overflow-x: hidden;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.interactive-touch-feedback:active {
+    transform: scale(0.94) !important; /* Gentle micro-shrink on finger press */
+    opacity: 0.75 !important;
 }
 
-/* 🖼️ HIGH-FIDELITY LANDING COMPONENT VIEWPORT BOUNDARY LOCK */
-.landing-chassis-wrapper {
-    width: 100%;
-    max-width: 430px; /* Constrains layout beautifully when desktop forced! */
-    margin: 0 auto;
-    padding: 0 20px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+/* Link underline removal overrides */
+.tappable-footer-link {
+    color: #007aff !important;
+    text-decoration: none;
+    transition: opacity 0.15s ease;
 }
-
-.component-container-box {
-    width: 100%;
-    margin-bottom: 24px;
+.tappable-footer-link:active {
+    opacity: 0.5 !important;
 }

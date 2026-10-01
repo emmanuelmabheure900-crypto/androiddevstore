@@ -5,18 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>AndroidDevStore</title>
     <style>
-        /* 🍏 ACCURATE IOS SYSTEM TYPOGRAPHY OVERRIDES & SOLID BLACK CORES */
+        /* 🍏 UNIVERSAL SAN FRANCISCO TEXT OVERRIDES & TRUE PITCH-BLACK SKINS */
         * { box-sizing: border-box; margin: 0; padding: 0; }
         
         body {
-            background-color: #000000 !important; /* Locks theme to pure luxury pitch-black */
+            background-color: #000000 !important; /* Forces solid luxury deep pitch-black */
             color: #ffffff !important;
             font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", sans-serif !important;
             -webkit-font-smoothing: antialiased;
             overflow-x: hidden; width: 100%; display: flex; flex-direction: column; align-items: center;
         }
 
-        /* 🏛️ ULTRA-GLASSY TRANSLUCENT NAVIGATION BAR */
+        /* 🏛️ ULTRA-GLASS TRANSLUCENT NAVIGATION RIBBON BAR */
         .glass-nav-bar {
             position: fixed; top: 0; left: 0; width: 100%; height: 44px;
             background: rgba(10, 10, 12, 0.25); backdrop-filter: blur(40px) saturate(210%);
@@ -27,13 +27,13 @@
         .brand-white { color: #ffffff; }
         .brand-orange { color: #ff9f0a; }
 
-        /* HORIZONTAL THREE DOTS MENU BUTTON GLYPH WITH PRESSED TRANSFORMS */
+        /* HORIZONTAL THREE DOTS (⋯) BUTTON GLYPH ROW */
         .three-dots-horizontal-btn {
             background: none; border: none; color: #ffffff; font-size: 20px; font-weight: 700;
             cursor: pointer; padding: 4px; display: flex; align-items: center; justify-content: center; outline: none;
         }
 
-        /* 👤 RE-CALIBRATED ABOUT DRAWERS LINK DROPDOWN MENU */
+        /* 👤 RE-CALIBRATED ABOUT REDIRECT POPUP PANEL DRAWER */
         .popover-card-box {
             position: fixed; top: 50px; right: 16px; background: rgba(28, 28, 30, 0.95);
             border: 0.5px solid rgba(255, 255, 255, 0.1); border-radius: 12px; padding: 6px 14px;
@@ -43,82 +43,110 @@
         .popover-link-small {
             color: #007aff !important; text-decoration: none; font-size: 13px; font-weight: 600; display: inline-block;
         }
-        /* 📐 COMPACT STRUCTURAL FRAME CONSTRAINT (STOPS SCREEN STRETCHING) */
-        .landing-chassis-wrapper {
-            width: 100%; max-width: 360px; margin: 0 auto; padding-top: 64px;
-            display: flex; flex-direction: column; align-items: center; text-align: center;
+        /* 📐 STRICT TEXT BARRIER LOCKS (PREVENTS PARAGRAPHS STRETCHING TO SCREEN EDGE) */
+        .compact-text-chassis {
+            width: 100%; max-width: 330px; /* Constrains headline text block balances cleanly! */
+            margin: 0 auto; display: flex; flex-direction: column; align-items: center; text-align: center;
         }
         .component-container-box { width: 100%; margin-bottom: 24px; }
         .luxury-headline { font-size: 32px; font-weight: 700; letter-spacing: -1.2px; line-height: 1.1; margin-bottom: 12px; }
         .luxury-subtext { font-size: 14px; color: #86868b; line-height: 1.45; font-weight: 500; }
 
-        /* ⚡ BIGGER HIGHER-CONTRAST EXPLORE CAPSULE PILL BUTTON */
+        /* ⚡ BIGGER HIGHER-CONTRAST EXPLORE ACTION CONTROLLER PILL BUTTON */
         .explore-pill-btn-scaled {
             background-color: #ffffff; color: #000000; font-size: 16px; font-weight: 600;
             padding: 12px 40px; border-radius: 24px; border: none; cursor: pointer; outline: none;
             box-shadow: 0 4px 14px rgba(255,255,255,0.15); display: inline-block; text-decoration: none;
         }
 
-        /* 🖼️ PERFECT SLIDER IMAGE WRAPPER: ELIMINATES SIDE OFF-COLORS & BOTTOM SHADES COMPLETELY */
-        .full-screen-card-frame {
-            width: 100%; max-width: 360px; height: 380px; border-radius: 24px;
-            overflow: hidden; margin: 24px auto; display: flex;
-            align-items: center; justify-content: center; background-color: #000000;
-            box-shadow: 0 12px 32px rgba(0,0,0,0.5);
+        /* 🎞️ CAROUSEL HORIZONTAL SCROLLER TRACK RESTORATION (NATIVE APPLE SIDE CLIPPING RESUMED!) */
+        .carousel-track-wrapper {
+            display: flex; gap: 16px; overflow-x: auto; width: 100vw; padding: 24px 20px;
+            scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; margin-top: 12px; margin-bottom: 12px;
         }
+        .carousel-track-wrapper::-webkit-scrollbar { display: none; }
+        
+        .card-chassis-node {
+            flex: 0 0 260px; height: 380px; border-radius: 24px; background-size: cover; background-position: center;
+            display: flex; align-items: flex-end; padding: 20px; box-sizing: border-box; position: relative; overflow: hidden;
+            scroll-snap-align: start; box-shadow: 0 12px 32px rgba(0,0,0,0.4);
+        }
+        .card-chassis-node::before {
+            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(to top, rgba(10,10,12,0.92) 0%, rgba(10,10,12,0) 65%); z-index: 1;
+        }
+        .card-meta-strings { position: relative; z-index: 2; text-align: left; }
+        .card-title-bold { font-size: 20px; font-weight: 700; color: #ffffff; line-height: 1.2; }
+        .card-date-fine { font-size: 11px; color: #86868b; font-weight: 600; margin-top: 4px; }
 
-        /* TACTILE MICROSURFACE TOUCH TRANSFORMS */
+        /* TACTILE MICROSURFACE PRESS REACTIONS */
         .interactive-scale-feedback { transition: transform 0.1s ease, opacity 0.1s ease; }
         .interactive-scale-feedback:active { transform: scale(0.94) !important; opacity: 0.75 !important; }
 
-        /* ACCORDION FAQ REGULATORS */
+        /* FAQ REGULATORS */
         .faq-block-section { text-align: left; padding: 24px 0; border-top: 0.5px solid rgba(255,255,255,0.1); width: 100%; }
         .faq-cell-row { padding: 16px 0; border-bottom: 0.5px solid rgba(255,255,255,0.08); cursor: pointer; }
         
-        /* REAL TAPPABLE GREY FOOTER LINK LABELS (NOT BLUE) */
+        /* REAL GREY TAPPABLE FOOTER LABELS (PRESERVED PRECISE ALIGNMENT) */
         .tappable-footer-anchor { color: #86868b !important; text-decoration: none; font-size: 12px; font-weight: 600; }
         .tappable-footer-anchor:hover { color: #ffffff !important; }
     </style>
 </head>
 <body>
 
-    <!-- NAV BAR WRAPPER -->
+    <!-- TOP GLASS HEADER RIBBON BAR -->
     <header class="glass-nav-bar">
         <div class="brand-font-left"><span class="brand-white">Android</span><span class="brand-orange">DevStore</span></div>
         <button id="dots-horizontal-trigger" class="three-dots-horizontal-btn interactive-scale-feedback">⋯</button>
     </header>
 
-    <!-- POPOVER DROPDOWN CONTAINER -->
+    <!-- POPOVER MENU CONTAINER -->
     <div id="popover-dropdown-drawer" class="popover-card-box">
-        <!-- LINK SPACE FOR PORTFOLIO REDIRECTS -->
         <a href="https://your-about-site-link-goes-here.com" target="_blank" class="popover-link-small interactive-scale-feedback">About</a>
     </div>
-    <div class="landing-chassis-wrapper">
-        <div id="landing-scene-container" style="width: 100%; display: flex; flex-direction: column; align-items: center;">
-            
-            <!-- SYSTEM LOGO BLOCK BINDING DIRECTLY TO YOUR INSTALLED SVG GRAPHIC FILE -->
+    <!-- MASTER FRAME DISPLAY WRAPPER -->
+    <div style="width: 100%; padding-top: 64px; display: flex; flex-direction: column; align-items: center;">
+        
+        <!-- COMPACT LOCK TYPE 1: ENVELOPE LOGO AND MAIN GREETING PITCH HEADLINES -->
+        <div class="compact-text-chassis">
             <div class="component-container-box">
                 <div style="width: 80px; height: 80px; margin: 0 auto; display: flex; align-items: center; justify-content: center;">
-                    <img src="./src/components/AppIcon/family-brunch.svg" alt="AndroidDevStore Core Vector Logo" style="width: 100%; height: 100%; object-fit: contain; display: block;">
+                    <img src="./src/components/AppIcon/family-brunch.svg" alt="AndroidDevStore Core Logo" style="width: 100%; height: 100%; object-fit: contain; display: block;">
                 </div>
             </div>
 
-            <div class="component-container-box" style="padding: 0 10px;">
+            <div class="component-container-box">
                 <h1 class="luxury-headline">Welcome to<br>AndroidDevStore</h1>
                 <p class="luxury-subtext">Create beautiful system profiles for all your devices. Anyone can receive scripts. Deployment included with MobileMe+.</p>
             </div>
 
-            <!-- UPSCALED ACTION CONTROL PILL -->
+            <!-- UPSCALED INTERACTIVE ACTION PILL BUTTON ELEMENT -->
             <div class="component-container-box">
                 <button id="explore-trigger-pill" class="explore-pill-btn-scaled interactive-scale-feedback">Explore</button>
             </div>
+        </div>
 
-            <!-- PERFECTED CARD CONTAINER: ZERO MASK SHADING, LOCKS NATIVE PHOTO SPACE CLIPS -->
-            <div class="full-screen-card-frame">
-                <img src="./src/components/MePeople/family-brunch.jpg" alt="Featured Production Asset Container" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+        <!-- 🎞️ COMPONENT 3 & 4: RESTORED ORIGINAL CAROUSEL SIDE SCROLLER SLIDER (CHANGABLE IMAGES INCLUDED) -->
+        <div class="carousel-track-wrapper">
+            <!-- 🔗 CARD 1 PLACEHOLDER CELL: EDIT THE URL STRING LINK INSIDE THE QUOTES TO DEPLOY A NEW IMAGE INSTANTLY -->
+            <div class="card-chassis-node" style="background-image: url('./src/components/MePeople/family-brunch.jpg');">
+                <div class="card-meta-strings">
+                    <div class="card-title-bold">Surprise<br>Brunch for...</div>
+                    <div class="card-date-fine">Mon, May 18 at 11:00 AM</div>
+                </div>
             </div>
+            <!-- EXTRA CARDS FALLING INTO AUTOMATED SIDE SCROLL TRACKS -->
+            <div class="card-chassis-node" style="background: linear-gradient(135deg, #1e1e24 0%, #4a154b 100%);">
+                <div class="card-meta-strings"><div class="card-title-bold">Movie Night<br>Premiere</div><div class="card-date-fine">Sat, July 11</div></div>
+            </div>
+            <div class="card-chassis-node" style="background: linear-gradient(135deg, #0f2027 0%, #2c5364 100%);">
+                <div class="card-meta-strings"><div class="card-title-bold">Sunrise Yoga<br>Class</div><div class="card-date-fine">Wed, July 22</div></div>
+            </div>
+        </div>
 
-            <div class="component-container-box" style="padding: 0 4px; margin-top: 16px; text-align: left;">
+        <!-- COMPACT LOCK TYPE 2: LOWER EXPLANATORY PARAGRAPHS, FAQ ACCORDION FIELDS, AND BALANCED FOOTER ROW LINKS -->
+        <div class="compact-text-chassis" style="padding: 0 16px;">
+            <div class="component-container-box" style="text-align: left; margin-top: 16px;">
                 <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 8px; color: #ffffff; letter-spacing: -0.4px;">Get the Utility Suite Started</h3>
                 <p class="luxury-subtext" style="font-size: 13px; line-height: 1.5;">Customize your un-rooted environment tracking loops with a curated performance profile or background shell script of your own choice. You can even inject wireless debugging capabilities, automated terminal hooks, and isolated execution packages directly into your host device array.</p>
             </div>
@@ -139,13 +167,13 @@
                 </div>
             </div>
 
-            <!-- BRAND EXECUTIVE FOUNDER CARD BLOCK -->
+            <!-- EXECUTIVE FOUNDER CARD BLOCK -->
             <div class="component-container-box" style="padding: 32px 0 8px 0; text-align: left; border-top: 0.5px solid rgba(255,255,255,0.05);">
                 <p style="font-size: 15px; font-weight: 700; color: #ffffff; letter-spacing: -0.2px;">Founded by Emmanuel Mabheure</p>
                 <p style="font-size: 12px; color: #86868b; margin-top: 2px; font-weight: 500;">Engineered by Emmanuel Mabheure and the MobileMe Team</p>
             </div>
 
-            <!-- 🏛️ FIXED ALIGNMENT LOCK: BALANCED ROW FOOTER INTERFACE MATRIX WITH EVEN GAPS -->
+            <!-- PRESERVED POSITION: PERFECTLY PLACED TAPPABLE FOOTER ELEMENT LINES -->
             <footer style="width: 100%; padding: 24px 0 60px 0; border-top: 0.5px solid rgba(255,255,255,0.1); text-align: left; line-height: 1.6;">
                 <div style="margin-bottom: 14px; display: flex; flex-direction: row; justify-content: flex-start; align-items: center; gap: 12px; width: 100%;">
                     <a href="https://your-system-status-site.com" target="_blank" class="tappable-footer-anchor interactive-scale-feedback">System Status</a>
@@ -157,22 +185,14 @@
                 <p style="font-weight: 400; opacity: 0.7; font-size: 11px; color: #86868b; text-align: left;">Copyright © 2026 MobileMe Inc. All rights reserved. AndroidDevStore and execution modules are engineered independently.</p>
             </footer>
         </div>
-
-        <div id="store-dashboard-view" style="width: 100%; display: none; flex-direction: column; align-items: center; padding-top: 40px;">
-            <h2 class="luxury-headline" style="font-size: 26px; margin-bottom: 8px;">Developer Dashboard</h2>
-            <p class="luxury-subtext" style="margin-bottom: 24px;">Your advanced mobile system management portal is fully active.</p>
-            <button onclick="location.reload()" class="interactive-scale-feedback" style="background: #2c2c2e; color: #ffffff; border: none; padding: 8px 20px; border-radius: 20px; font-weight: 600; font-size: 13px; cursor: pointer;">Disconnect</button>
-        </div>
     </div>
 
-    <!-- CODE SCRIPTS -->
+    <!-- MAIN CONTROL SCRIPTS ENGINE -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const dotsBtn = document.getElementById('dots-horizontal-trigger');
             const popoverMenu = document.getElementById('popover-dropdown-drawer');
             const exploreBtn = document.getElementById('explore-trigger-pill');
-            const landingView = document.getElementById('landing-scene-container');
-            const storeDashboard = document.getElementById('store-dashboard-view');
 
             if (dotsBtn && popoverMenu) {
                 dotsBtn.addEventListener('click', (e) => {
@@ -180,14 +200,6 @@
                     popoverMenu.style.display = popoverMenu.style.display === 'block' ? 'none' : 'block';
                 });
                 document.addEventListener('click', () => { popoverMenu.style.display = 'none'; });
-            }
-
-            if (exploreBtn && landingView && storeDashboard) {
-                exploreBtn.addEventListener('click', () => {
-                    landingView.style.display = 'none';
-                    storeDashboard.style.display = 'flex';
-                    window.scrollTo(0, 0);
-                });
             }
         });
 

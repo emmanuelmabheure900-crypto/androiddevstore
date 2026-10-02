@@ -1,21 +1,32 @@
-<!-- ⚡ SCALED UP ACTION CONTROLLER PILL WITH PRESS FEEDBACK -->
+<!-- ⚡ EXPLORE NAVIGATION SYSTEM SCENE ROUTER -->
 <div class="explore-pill-box" style="margin-top: 24px; text-align: center;">
-    <button id="explore-trigger-pill" class="interactive-touch-feedback" style="background-color: #ffffff; color: #000000; font-size: 15px; font-weight: 600; padding: 12px 36px; border-radius: 24px; border: none; cursor: pointer; font-family: -apple-system, BlinkMacSystemFont, sans-serif; box-shadow: 0 4px 14px rgba(255,255,255,0.15); outline: none;">
+    <button id="explore-trigger-pill" class="interactive-scale-feedback" style="background-color: #ffffff; color: #000000; font-size: 16px; font-weight: 600; padding: 12px 40px; border-radius: 24px; border: none; cursor: pointer; font-family: -apple-system, BlinkMacSystemFont, sans-serif; box-shadow: 0 4px 14px rgba(255,255,255,0.15); outline: none;">
         Explore
     </button>
 </div>
 
 <script>
     (function() {
-        const trigger = document.getElementById('explore-trigger-pill');
-        if (trigger) {
-            trigger.addEventListener('click', () => {
-                const landingView = document.getElementById('landing-scene-container');
-                const storeDashboard = document.getElementById('store-dashboard-view');
-                if (landingView && storeDashboard) {
-                    landingView.style.display = 'none';
-                    storeDashboard.style.display = 'flex';
+        const exploreBtn = document.getElementById('explore-trigger-pill');
+        
+        if (exploreBtn) {
+            exploreBtn.addEventListener('click', () => {
+                // 📡 LOCATES TRANSITION ELEMENTS WITHIN THE SINGLE-FILE FRAMEWORK
+                const landingSceneView = document.getElementById('landing-scene-container');
+                const mainStorefrontSkeleton = document.getElementById('main-storefront-view-wrapper');
+                
+                if (landingSceneView && mainStorefrontSkeleton) {
+                    // Smoothly hides onboarding components
+                    landingSceneView.style.display = 'none';
+                    
+                    // Instantly mounts the complete post-landing store matrix scene
+                    mainStorefrontSkeleton.style.display = 'flex';
                     window.scrollTo(0, 0);
+                    
+                    console.log("🪐 AndroidDevStore Scene Engine: MainScreen skeleton rendered live successfully!");
+                } else {
+                    // Fallback alert handler if index.html mounts aren't updated yet
+                    alert("Slingshot routing loop engaged! Mount target 'main-storefront-view-wrapper' not found in index.html framework layer.");
                 }
             });
         }

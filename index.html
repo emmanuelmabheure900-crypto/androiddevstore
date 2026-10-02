@@ -177,13 +177,14 @@
         </div>
     </div>
 
-    <!-- CORE INTERACTION SCRIPTS -->
+    <!-- ⚙️ AUTOMATED SINGLE-FILE SKELETON MOUNT CONTROLLER -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const dotsBtn = document.getElementById('dots-horizontal-trigger');
             const popoverMenu = document.getElementById('popover-dropdown-drawer');
             const exploreBtn = document.getElementById('explore-trigger-pill');
 
+            // 1. Horizontal Three-Dot Menu Click Controls
             if (dotsBtn && popoverMenu) {
                 dotsBtn.addEventListener('click', (e) => {
                     e.stopPropagation();
@@ -192,15 +193,37 @@
                 document.addEventListener('click', () => { popoverMenu.style.display = 'none'; });
             }
 
+            // 2. Automated Asynchronous Fetch & View Switching Engine
             if (exploreBtn) {
-                exploreBtn.addEventListener('click', () => {
-                    document.getElementById('landing-scene-container').style.display = 'none';
-                    document.getElementById('store-dashboard-view').style.display = 'flex';
-                    window.scrollTo(0, 0);
+                exploreBtn.addEventListener('click', async () => {
+                    const landingView = document.getElementById('landing-scene-container');
+                    const storeDashboard = document.getElementById('store-dashboard-view');
+                    
+                    if (landingView && storeDashboard) {
+                        try {
+                            // Asynchronously fetches your separate template without cluttering your root codes
+                            const response = await fetch('./src/components/MainScreen.html');
+                            
+                            if (response.ok) {
+                                // Streams your standalone Main Screen layout live into your hidden dashboard viewport slot
+                                storeDashboard.innerHTML = await response.text();
+                                
+                                // Switches screen visibilities instantly on your pure pitch-black backdrop
+                                landingView.style.display = 'none';
+                                storeDashboard.style.display = 'flex';
+                                window.scrollTo(0, 0);
+                            } else {
+                                console.error("⚠️ MainScreen file failed to stream. Verify its path inside your repository branch.");
+                            }
+                        } catch (err) {
+                            console.error("⚠️ Automated Ecosystem Assembly Error: ", err);
+                        }
+                    }
                 });
             }
         });
 
+        // FAQ ACCORDION DROPDOWN ENGINE
         function toggleFaqAccordionTrack(element) {
             const answer = element.querySelector('.faq-answer-panel');
             const chevron = element.querySelector('.faq-chevron');

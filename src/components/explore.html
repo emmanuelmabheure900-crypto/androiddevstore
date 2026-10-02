@@ -1,17 +1,40 @@
-<!-- ⚡ EXPLORE CORE: AUTOMATED ECOSYSTEM MANAGEMENT CONTROLLER -->
+<!-- ⚡ EXPLORE CORE: BALANCED INLINE VIEWPORT SCENE SWITCHER -->
 <div class="explore-pill-box" style="margin-top: 24px; text-align: center;">
-    <!-- INLINE GATEWAY TRIGGER TO BYPASS INNERHTML COOKING BLOCKS NATIVELY -->
+    <!-- 
+      ⚡ SELF-CONTAINED INLINE HANDSHAKE LOOP
+      This button houses the entire post-landing store skeleton structure and navigation switching script 
+      directly inside its own native properties, forcing an instant transition on click!
+    -->
     <button id="explore-trigger-pill" 
             onclick="(function(){
+                // 1. LOCATE SYSTEM STAGING VIEWPORT ARCHITECTURES
                 const landing = document.getElementById('landing-scene-container');
                 const dashboard = document.getElementById('store-dashboard-view');
-                if (landing && dashboard) {
+                const template = document.getElementById('devstore-main-screen-blueprint');
+                
+                if (landing && dashboard && template) {
+                    // 2. TRIGGER INSTANT VISIBILITY SWAP ON THE PITCH-BLACK CANVAS
                     landing.style.display = 'none';
                     dashboard.style.display = 'flex';
                     window.scrollTo(0, 0);
-                    if (window.initializeAndroidDevStoreEcosystem) {
-                        window.initializeAndroidDevStoreEcosystem();
+                    
+                    // 3. MOUNT THE POST-LANDING MAIN ECOSYSTEM SKELETON
+                    dashboard.innerHTML = '';
+                    dashboard.appendChild(template.content.cloneNode(true));
+                    
+                    // 4. WIRE UP HAMBURGER DRAWER INTERACTION LOOPS IMMEDIATELY POST-MOUNT
+                    const trigger = document.getElementById('menu-drawer-trigger-btn');
+                    const drawer = document.getElementById('left-sidebar-menu-drawer');
+                    const closeBtn = document.getElementById('close-drawer-btn');
+                    
+                    if (trigger && drawer && closeBtn) {
+                        trigger.addEventListener('click', (e) => { e.stopPropagation(); drawer.style.left = '0px'; });
+                        closeBtn.addEventListener('click', () => { drawer.style.left = '-280px'; });
+                        document.addEventListener('click', (e) => { if (!drawer.contains(e.target) && e.target !== trigger) drawer.style.left = '-280px'; });
                     }
+                    console.log('🪐 AndroidDevStore Engine: MainScreen skeleton rendered live successfully via inline properties!');
+                } else {
+                    console.error('⚠️ Critical target elements missing from index shell.');
                 }
             })()" 
             class="interactive-scale-feedback" 
@@ -19,17 +42,17 @@
         Explore
     </button>
 </div>
-
 <!-- ========================================================================================= -->
-<!-- 🏛️ ECOSYSTEM FRAMEWORK PRESENTATION MARKUP TEMPLATE HOOKS                                -->
+<!-- 🏛️ POST-LANDING MAIN ECOSYSTEM SKELETON BLUEPRINT TEMPLATE                              -->
 <!-- ========================================================================================= -->
 <template id="devstore-main-screen-blueprint">
     <div id="main-storefront-view-wrapper" style="width: 100%; display: flex; flex-direction: column; align-items: center; position: relative; background-color: #000000; box-sizing: border-box;">
-        <!-- 🏛️ LIQUID NAVIGATION BAR WITH LEFT TWO-LINE MENU ICON AND CENTERED BRANDING -->
+        
+        <!-- 🏛️ ULTRA-GLASS NAVIGATION HEADER WITH LEFT TWO-LINE MENU ICON AND CENTERED BRANDING -->
         <div class="store-nav-bar" style="width: 100%; height: 44px; display: flex; align-items: center; justify-content: space-between; background: rgba(10, 10, 12, 0.01); backdrop-filter: blur(50px) saturate(240%); -webkit-backdrop-filter: blur(50px) saturate(240%); border-bottom: 0.5px solid rgba(255, 255, 255, 0.02); padding: 0 16px; position: absolute; top: 0; left: 0; z-index: 9998; box-sizing: border-box;">
             
             <!-- TWO-LINE HAMBURGER MENU GLYPH BUTTON -->
-            <button id="menu-drawer-trigger-btn" class="interactive-scale-feedback" style="background: none; border: none; color: #ffffff; cursor: pointer; display: flex; flex-direction: column; gap: 5px; padding: 4px; outline: none; width: 24px;">
+            <button id="menu-drawer-trigger-btn" style="background: none; border: none; color: #ffffff; cursor: pointer; display: flex; flex-direction: column; gap: 5px; padding: 4px; outline: none; width: 24px;">
                 <div style="width: 20px; height: 2px; background-color: #ffffff; border-radius: 1px;"></div>
                 <div style="width: 14px; height: 2px; background-color: #ffffff; border-radius: 1px;"></div>
             </button>
@@ -41,244 +64,52 @@
 
             <div style="width: 24px; height: 24px;"></div>
         </div>
+
         <!-- 👥 SLIDING LEFT NAVIGATION MENU DRAWER CONTAINER -->
         <div id="left-sidebar-menu-drawer" style="position: fixed; top: 0; left: -280px; width: 260px; height: 100vh; background: rgba(19, 19, 21, 0.97); backdrop-filter: blur(40px); -webkit-backdrop-filter: blur(40px); border-right: 0.5px solid rgba(255, 255, 255, 0.08); z-index: 9999; box-shadow: 10px 0 30px rgba(0,0,0,0.6); display: flex; flex-direction: column; padding: 60px 20px 24px 20px; box-sizing: border-box; transition: left 0.3s cubic-bezier(0.16, 1, 0.3, 1);">
             <button id="close-drawer-btn" style="position: absolute; top: 12px; right: 16px; background: none; border: none; color: #86868b; font-size: 20px; cursor: pointer; outline: none;">✕</button>
             
             <div style="display: flex; flex-direction: column; gap: 20px; width: 100%; text-align: left;">
-                <div id="nav-today-btn" class="interactive-scale-feedback" style="color: #ffffff; font-size: 17px; font-weight: 600; cursor: pointer;">📱 Today</div>
-                <div id="nav-games-btn" class="interactive-scale-feedback" style="color: #ffffff; font-size: 17px; font-weight: 600; cursor: pointer;">🚀 Games</div>
-                <div id="nav-apps-btn" class="interactive-scale-feedback" style="color: #ffffff; font-size: 17px; font-weight: 600; cursor: pointer;">📦 Apps</div>
-                <div id="nav-arcade-btn" class="interactive-scale-feedback" style="color: #007aff; font-size: 17px; font-weight: 600; cursor: pointer;">🕹️ Arcade</div>
-                <div id="nav-settings-btn" class="interactive-scale-feedback" style="color: #ffffff; font-size: 17px; font-weight: 600; cursor: pointer;">⚙️ Settings</div>
+                <div style="color: #ffffff; font-size: 17px; font-weight: 600; cursor: pointer;">📱 Today</div>
+                <div style="color: #ffffff; font-size: 17px; font-weight: 600; cursor: pointer;">🚀 Games</div>
+                <div style="color: #ffffff; font-size: 17px; font-weight: 600; cursor: pointer;">📦 Apps</div>
+                <div style="color: #007aff; font-size: 17px; font-weight: 600; cursor: pointer;">🕹️ Arcade</div>
+                <div style="color: #ffffff; font-size: 17px; font-weight: 600; cursor: pointer;">⚙️ Settings</div>
                 
                 <div style="width: 100%; height: 0.5px; background: rgba(255,255,255,0.08); margin: 8px 0;"></div>
-                <div id="nav-about-btn" class="interactive-scale-feedback" style="color: #007aff; font-size: 15px; font-weight: 600; cursor: pointer;">About Developer</div>
-                <div style="width: 100%; height: 0.5px; background: rgba(255,255,255,0.08); margin: 8px 0;"></div>
+                <div style="color: #007aff; font-size: 15px; font-weight: 600; cursor: pointer;">About Developer</div>
                 
-                <!-- MEDEVS REGISTRATION SYSTEM HOOK PLACEHOLDER -->
-                <div id="nav-medevs-btn" class="interactive-scale-feedback" style="color: #ff9f0a; font-size: 14px; font-weight: 700; cursor: pointer; letter-spacing: -0.2px;">🛠️ Join MeDevs ($)</div>
+                <div style="width: 100%; height: 0.5px; background: rgba(255,255,255,0.08); margin: 8px 0;"></div>
+                <div style="color: #ff9f0a; font-size: 14px; font-weight: 700; cursor: pointer; letter-spacing: -0.2px;">🛠️ Join MeDevs ($)</div>
             </div>
         </div>
+
         <!-- MAIN DASHBOARD CONTENT SCROLL COLUMN -->
         <div id="dashboard-scroll-column" style="width: 100%; max-width: 360px; padding: 60px 16px 40px 16px; display: flex; flex-direction: column; align-items: center; box-sizing: border-box;">
             
             <!-- 🎥 LIVE VIDEO SPOTLIGHT FRAME -->
-            <div id="video-component-dock" style="width: 100%; height: 200px; border-radius: 20px; overflow: hidden; margin-bottom: 20px; box-shadow: 0 12px 32px rgba(0,0,0,0.6); background-color: #000000;">
-                <!-- Content streams programmatically via loop handler -->
+            <div class="video-spotlight-chassis" style="width: 100%; height: 200px; border-radius: 20px; overflow: hidden; margin-bottom: 20px; box-shadow: 0 12px 32px rgba(0,0,0,0.6); background-color: #000000;">
+                <video src="./src/assets/video.mp4" autoplay loop muted playsinline style="width: 100%; height: 100%; object-fit: cover; display: block; max-height: 240px;"></video>
             </div>
 
             <!-- SEARCH SYSTEM LAYOUT BAR -->
             <div class="search-bar-box" style="width: 100%; margin-bottom: 24px;">
-                <input type="text" id="store-search-input-field" placeholder="🔍 Search Apps, Tiers, Developers" style="width: 100%; height: 38px; background: #1c1c1e; border: none; border-radius: 10px; padding: 0 12px 0 16px; color: #ffffff; font-size: 14px; outline: none; box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, sans-serif;">
+                <input type="text" placeholder="🔍 Search Apps, Tiers, Developers" style="width: 100%; height: 38px; background: #1c1c1e; border: none; border-radius: 10px; padding: 0 12px 0 16px; color: #ffffff; font-size: 14px; outline: none; box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, sans-serif;">
             </div>
 
-            <!-- AUTOMATED APPLICATION GRID INJECTION CORE -->
+            <!-- MANUAL APP CARD BLOCK SKELETON -->
             <div id="automated-apps-list-mount" style="width: 100%; display: flex; flex-direction: column; gap: 16px;">
-                <!-- Cards render here via database loops -->
-            </div>
-        </div>
-        <!-- ⚙️ THE PRIVACY SETTINGS PANEL MODAL VIEW SHEET -->
-        <div id="settings-view-panel-sheet" style="width: 100%; display: none; flex-direction: column; padding: 60px 16px 40px 16px; box-sizing: border-box;">
-            <div style="text-transform: uppercase; font-size: 11px; color: #86868b; font-weight: 600; margin-bottom: 8px; letter-spacing: 0.5px; padding-left: 12px;">Device Preferences</div>
-            <div style="background-color: #1c1c1e; border-radius: 12px; width: 100%; padding: 4px 16px; margin-bottom: 12px; box-sizing: border-box;">
-                <div style="display: flex; justify-content: space-between; align-items: center; padding: 14px 0; border-bottom: 0.5px solid rgba(255,255,255,0.08);">
-                    <div style="font-size: 16px; color: #ffffff; font-weight: 500;">Show Terminal Logs</div>
-                    <div style="width: 44px; height: 24px; background: #34c759; border-radius: 24px; position: relative; cursor: pointer;"><div style="width: 20px; height: 20px; background: white; border-radius: 50%; position: absolute; right: 2px; top: 2px;"></div></div>
+                <div class="glass-category-card" style="background: rgba(255, 255, 255, 0.02); border: 0.5px solid rgba(255, 255, 255, 0.05); backdrop-filter: blur(30px); -webkit-backdrop-filter: blur(30px); border-radius: 16px; padding: 14px; display: flex; align-items: center; justify-content: space-between; width: 100%; cursor: pointer;">
+                    <div style="display: flex; align-items: center; gap: 12px; text-align: left;">
+                        <div style="width: 44px; height: 44px; background: linear-gradient(135deg, #1e1e24 0%, #4a154b 100%); border-radius: 10px;"></div>
+                        <div>
+                            <div style="font-size: 15px; font-weight: 700; color: #ffffff;">System Performance Engine</div>
+                            <div style="font-size: 11px; color: #86868b; margin-top: 2px;">Normal Users Suite &bull; By Emmanuel Mabheure</div>
+                        </div>
+                    </div>
+                    <button style="background: #2c2c2e; color: #007aff; border: none; padding: 6px 18px; border-radius: 14px; font-size: 12px; font-weight: 700; cursor: pointer; outline: none;">VIEW</button>
                 </div>
-                <div style="display: flex; justify-content: space-between; align-items: center; padding: 14px 0;">
-                    <div style="font-size: 16px; color: #ffffff; font-weight: 500;">Use Play History</div>
-                    <div style="width: 44px; height: 24px; background: #34c759; border-radius: 24px; position: relative; cursor: pointer;"><div style="width: 20px; height: 20px; background: white; border-radius: 50%; position: absolute; right: 2px; top: 2px;"></div></div>
-                </div>
-            </div>
-            <div style="text-transform: uppercase; font-size: 11px; color: #86868b; font-weight: 600; margin-bottom: 8px; letter-spacing: 0.5px; padding-left: 12px; margin-top: 16px;">Corporate Identity</div>
-            <div style="background-color: #1c1c1e; border-radius: 12px; width: 100%; padding: 16px; box-sizing: border-box; font-size: 14px; color: #86868b; line-height: 1.5;">
-                <span style="color: #ffffff; font-weight: 600;">AndroidDevStore Platform</span> is engineered cleanly on high-fidelity single-file presentation stacks. All binary scripts and packages execute securely inside sandbox containers.
-            </div>
-        </div>
-
-        <div id="download-loading-spinner-overlay" style="position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: rgba(0,0,0,0.85); backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px); z-index: 10002; display: none; align-items: center; justify-content: center; box-sizing: border-box;">
-            <div style="background: #1c1c1e; border: 0.5px solid rgba(255,255,255,0.1); padding: 32px 24px; border-radius: 24px; max-width: 300px; width: 90%; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
-                <div style="position: relative; width: 40px; height: 40px; margin: 0 auto 20px auto; animation: rotateLoaderSpinnerLoop 1s linear infinite;">
-                    <div style="position: absolute; width: 3px; height: 10px; background: #ff9f0a; left: 18px; top: 0; border-radius: 2px;"></div>
-                    <div style="position: absolute; width: 3px; height: 10px; background: #ff9f0a; left: 18px; bottom: 0; border-radius: 2px; opacity: 0.3;"></div>
-                    <div style="position: absolute; width: 3px; height: 10px; background: #ff9f0a; left: 0; top: 15px; border-radius: 2px; transform: rotate(90deg); opacity: 0.5;"></div>
-                    <div style="position: absolute; width: 3px; height: 10px; background: #ff9f0a; right: 0; top: 15px; border-radius: 2px; transform: rotate(90deg); opacity: 0.8;"></div>
-                </div>
-                <style>@keyframes rotateLoaderSpinnerLoop { to { transform: rotate(360deg); } }</style>
-                <h3 id="spinner-status-heading-text" style="font-size: 20px; font-weight: 700; color: #ffffff; margin-bottom: 8px;">Connecting...</h3>
-                <p id="spinner-status-desc-text" style="font-size: 13px; color: #86868b; line-height: 1.45;">Preparing secure handshake connection down-link to server grid.</p>
             </div>
         </div>
     </div>
 </template>
-<script>
-    (function() {
-        // ⚡ REGISTRY ENGINE HOUSING ENTIRE MARKETPLACE APPLICATION CATALOG WITH SCHEMAS
-        const AndroidDevStore_CatalogDatabase = [
-            {
-                id: "app_performance_engine",
-                title: "System Performance Engine",
-                developer: "Emmanuel Mabheure",
-                tier: "Normal Users Suite",
-                rating: "4.9",
-                reviewsCount: "1,420",
-                size: "14.2 MB",
-                iconGradient: "linear-gradient(135deg, #1e1e24 0%, #4a154b 100%)",
-                description: "Optimize your system environment tracking loops with a curated performance profile or background shell script of your own choice. Inject automated terminal hooks and isolated execution packages directly into your host device array natively without any device partition crashes.",
-                screenshots: ["🎉 Active Profile", "📊 Execution Graph"],
-                reviews: [
-                    { author: "Alex_Dev", text: "Snappy response scales. Handles terminal handshakes beautifully!" },
-                    { author: "CryptX", text: "Zero device execution load. Excellent frontend framework mapping." }
-                ]
-            },
-            {
-                id: "app_debug_daemon",
-                title: "Wireless Debug Daemon",
-                developer: "MeDev Partner Core",
-                tier: "Advanced (Locked Bootloader)",
-                rating: "4.8",
-                reviewsCount: "982",
-                size: "8.7 MB",
-                iconGradient: "linear-gradient(135deg, #0f2027 0%, #2c5364 100%)",
-                description: "Establish robust automation script triggers via deep local wireless terminal bridges. Created by premium verified publishers registered on our global platform tier network.",
-                screenshots: ["📡 Bridge Handshake", "📜 Automation Console"],
-                reviews: [
-                    { author: "RootMiner", text: "Perfect tool for locked kernels. Seamless installation tracks." }
-                ]
-            }
-        ];
-
-        // Global pipeline anchor so the inline trigger button can initialize the matrix
-        window.initializeAndroidDevStoreEcosystem = function() {
-            const container = document.getElementById('store-dashboard-view');
-            const template = document.getElementById('devstore-main-screen-blueprint');
-            if (!container || !template) return;
-
-            container.innerHTML = "";
-            container.appendChild(template.content.cloneNode(true));
-
-            // Inject the Live Spotlight Player Frame
-            document.getElementById('video-component-dock').innerHTML = `
-                <video src="./src/assets/video.mp4" autoplay loop muted playsinline style="width: 100%; height: 100%; object-fit: cover; display: block; max-height: 240px;"></video>
-            `;
-
-            bindEcosystemNavigationControls();
-            renderAutomatedAppCatalogGrid(AndroidDevStore_CatalogDatabase);
-            setupLiveStorefrontSearchEngine();
-        };
-        function bindEcosystemNavigationControls() {
-            const trigger = document.getElementById('menu-drawer-trigger-btn');
-            const drawer = document.getElementById('left-sidebar-menu-drawer');
-            const closeBtn = document.getElementById('close-drawer-btn');
-            const scrollCol = document.getElementById('dashboard-scroll-column');
-            const settingsView = document.getElementById('settings-view-panel-sheet');
-
-            if (trigger && drawer && closeBtn) {
-                trigger.addEventListener('click', (e) => { e.stopPropagation(); drawer.style.left = '0px'; });
-                closeBtn.addEventListener('click', () => { drawer.style.left = '-280px'; });
-                document.addEventListener('click', (e) => { if (!drawer.contains(e.target) && e.target !== trigger) drawer.style.left = '-280px'; });
-            }
-
-            document.getElementById('nav-apps-btn').addEventListener('click', () => {
-                settingsView.style.display = 'none'; scrollCol.style.display = 'flex'; drawer.style.left = '-280px';
-            });
-            document.getElementById('nav-settings-btn').addEventListener('click', () => {
-                scrollCol.style.display = 'none'; settingsView.style.display = 'flex'; drawer.style.left = '-280px';
-            });
-            document.getElementById('nav-about-btn').addEventListener('click', () => {
-                alert("AndroidDevStore - Founded & Engineered by Emmanuel Mabheure."); drawer.style.left = '-280px';
-            });
-            document.getElementById('nav-medevs-btn').addEventListener('click', () => {
-                alert("🔒 MeDevs Portal Gateway: Developer registration costs \$99/year. Portal deployment is being safely prepared."); drawer.style.left = '-280px';
-            });
-        }
-
-        function renderAutomatedAppCatalogGrid(catalogData) {
-            const mountPoint = document.getElementById('automated-apps-list-mount');
-            if (!mountPoint) return;
-            mountPoint.innerHTML = "";
-
-            catalogData.forEach(app => {
-                const card = document.createElement('div');
-                card.className = "glass-category-card interactive-scale-feedback";
-                card.style.cssText = "background: rgba(255, 255, 255, 0.02); border: 0.5px solid rgba(255, 255, 255, 0.05); backdrop-filter: blur(30px); -webkit-backdrop-filter: blur(30px); border-radius: 16px; padding: 14px; display: flex; align-items: center; justify-content: space-between; width: 100%; cursor: pointer;";
-                card.innerHTML = `
-                    <div style="display: flex; align-items: center; gap: 12px; text-align: left;">
-                        <div style="width: 44px; height: 44px; background: ${app.iconGradient}; border-radius: 10px;"></div>
-                        <div>
-                            <div style="font-size: 15px; font-weight: 700; color: #ffffff;">${app.title}</div>
-                            <div style="font-size: 11px; color: #86868b; margin-top: 2px;">${app.tier} &bull; By ${app.developer}</div>
-                        </div>
-                    </div>
-                    <button class="view-trigger-btn" style="background: #2c2c2e; color: #007aff; border: none; padding: 6px 18px; border-radius: 14px; font-size: 12px; font-weight: 700; cursor: pointer; outline: none;">VIEW</button>
-                `;
-
-                card.querySelector('.view-trigger-btn').addEventListener('click', (e) => { e.stopPropagation(); launchProductDetailSheetView(app); });
-                card.addEventListener('click', () => { launchProductDetailSheetView(app); });
-                mountPoint.appendChild(card);
-            });
-        }
-
-        function launchProductDetailSheetView(app) {
-            const sheet = document.getElementById('product-preview-detail-sheet');
-            if (!sheet) return;
-
-            sheet.innerHTML = `
-                <div style="width: 100%; max-width: 360px; margin: 0 auto; text-align: left; position: relative;">
-                    <button id="close-preview-sheet-btn" style="background: #1c1c1e; border: none; color: #ffffff; width: 32px; height: 32px; border-radius: 50%; font-size: 14px; cursor: pointer; position: absolute; top: 0; right: 0; display: flex; align-items: center; justify-content: center;">✕</button>
-                    <div style="display: flex; align-items: center; gap: 16px; margin-top: 40px; margin-bottom: 24px;">
-                        <div style="width: 72px; height: 72px; background: ${app.iconGradient}; border-radius: 18px; box-shadow: 0 4px 12px rgba(0,0,0,0.4);"></div>
-                        <div>
-                            <h2 style="font-size: 22px; font-weight: 700; color: #ffffff; line-height: 1.2;">${app.title}</h2>
-                            <p style="font-size: 13px; color: #007aff; font-weight: 500; margin-top: 2px;">Developer: ${app.developer}</p>
-                            <p style="font-size: 11px; color: #86868b; margin-top: 1px; text-transform: uppercase; font-weight: 600;">${app.tier}</p>
-                        </div>
-                    </div>
-                    <div style="width: 100%; margin-bottom: 24px;">
-                        <button id="get-binary-download-btn" class="interactive-scale-feedback" style="background: #007aff; color: #ffffff; border: none; width: 100%; padding: 12px; border-radius: 12px; font-size: 15px; font-weight: 700; cursor: pointer; outline: none; box-shadow: 0 4px 14px rgba(0,122,255,0.3);">GET</button>
-                    </div>
-                    <div style="display: flex; background: #1c1c1e; border-radius: 12px; padding: 12px; justify-content: space-around; text-align: center; margin-bottom: 24px; box-sizing: border-box;">
-                        <div><div style="font-size: 11px; color: #86868b; font-weight: 600;">RATINGS</div><div style="font-size: 16px; font-weight: 700; color: #ffffff; margin-top: 4px;">${app.rating} ★</div></div>
-                        <div style="width:0.5px; background:rgba(255,255,255,0.1); height:30px;"></div>
-                        <div><div style="font-size: 11px; color: #86868b; font-weight: 600;">SIZE</div><div style="font-size: 16px; font-weight: 700; color: #ffffff; margin-top: 4px;">${app.size}</div></div>
-                    </div>
-                    <h4 style="font-size: 14px; font-weight: 700; color: #ffffff; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.5px;">Previews</h4>
-                    <div style="display: flex; gap: 12px; overflow-x: auto; margin-bottom: 24px; padding-bottom: 4px;">
-                        ${app.screenshots.map(shot => `<div style="flex: 0 0 160px; height: 100px; background: #2c2c2e; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #86868b; font-weight: 600; border: 0.5px solid rgba(255,255,255,0.05);">\${shot}</div>`).join('')}
-                    </div>
-                    <h4 style="font-size: 14px; font-weight: 700; color: #ffffff; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px;">Description</h4>
-                    <p style="font-size: 14px; color: #86868b; line-height: 1.5; margin-bottom: 24px;">${app.description}</p>
-                    <h4 style="font-size: 14px; font-weight: 700; color: #ffffff; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.5px;">Ratings & Reviews</h4>
-                    ${app.reviews.map(rev => `<div style="background: #1c1c1e; border-radius: 12px; padding: 14px; margin-bottom: 12px; box-sizing: border-box;"><div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;"><span style="font-size: 13px; font-weight: 700; color: #ffffff;">\${rev.author}</span><span style="font-size: 11px; color: #ff9f0a;">★★★★★</span></div><p style="font-size: 13px; color: #86868b; line-height: 1.4;">\${rev.text}</p></div>`).join('')}
-                </div>
-            `;
-            sheet.style.display = 'flex'; sheet.scrollTo(0,0);
-            document.getElementById('close-preview-sheet-btn').addEventListener('click', () => { sheet.style.display = 'none'; });
-
-            document.getElementById('get-binary-download-btn').addEventListener('click', () => {
-                const overlay = document.getElementById('download-loading-spinner-overlay');
-                const heading = document.getElementById('spinner-status-heading-text');
-                const desc = document.getElementById('spinner-status-desc-text');
-                if (!overlay) return;
-                heading.textContent = "Connecting..."; desc.textContent = "Preparing secure handshake connection down-link to server grid."; overlay.style.display = 'flex';
-                setTimeout(() => {
-                    heading.textContent = "Downloading..."; desc.textContent = "Your secure binary download has initialized successfully. Check your browser folder.";
-                    setTimeout(() => { overlay.style.display = 'none'; alert(`📥 Download Successful: Registered bundle file for [${app.title}] has completed transfer sequence!`); }, 2000);
-                }, 1800);
-            });
-        }
-
-        function setupLiveStorefrontSearchEngine() {
-            const input = document.getElementById('store-search-input-field');
-            if (!input) return;
-            input.addEventListener('input', (e) => {
-                const query = e.target.value.toLowerCase().trim();
-                const filteredData = AndroidDevStore_CatalogDatabase.filter(app => {
-                    return app.title.toLowerCase().includes(query) || app.tier.toLowerCase().includes(query) || app.developer.toLowerCase().includes(query);
-                });
-                renderAutomatedAppCatalogGrid(filteredData);
-            });
-        }
-    })();
-</script>

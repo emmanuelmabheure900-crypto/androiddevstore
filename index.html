@@ -198,24 +198,15 @@
                 exploreBtn.addEventListener('click', async () => {
                     const landingView = document.getElementById('landing-scene-container');
                     const storeDashboard = document.getElementById('store-dashboard-view');
-                    
-                    if (landingView && storeDashboard) {
-                        try {
-                            // Asynchronously fetches your separate template without cluttering your root codes
-                            const response = await fetch('./src/components/MainScreen.html');
-                            
-                            if (response.ok) {
-                                // Streams your standalone Main Screen layout live into your hidden dashboard viewport slot
-                                storeDashboard.innerHTML = await response.text();
-                                
-                                // Switches screen visibilities instantly on your pure pitch-black backdrop
-                                landingView.style.display = 'none';
-                                storeDashboard.style.display = 'flex';
-                                window.scrollTo(0, 0);
-                            } else {
-                                console.error("⚠️ MainScreen file failed to stream. Verify its path inside your repository branch.");
-                            }
-                        } catch (err) {
+                                if (landingView && storeDashboard) {
+                // ⚡ DIRECT LOCAL VISIBILITY SWITCH SWAP (Bypasses all network errors)
+                storeDashboard.innerHTML = `<div style="width: 100%; min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; background: #000000; color: #ffffff; font-family: -apple-system, BlinkMacSystemFont, sans-serif;"><h2 style="font-size: 24px; font-weight: 700; color: #ffffff; letter-spacing: -0.5px;">Ecosystem Activated</h2><p style="color: #86868b; font-size: 14px; margin-top: 4px;">AndroidDevStore Home Screen is ready for blueprinting.</p></div>`;
+                
+                landingView.style.display = 'none';
+                storeDashboard.style.display = 'flex';
+                window.scrollTo(0, 0);
+            }
+
                             console.error("⚠️ Automated Ecosystem Assembly Error: ", err);
                         }
                     }

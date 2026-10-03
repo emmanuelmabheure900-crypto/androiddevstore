@@ -177,13 +177,94 @@
         </div>
     </div>
 
-      <!-- ⚡ SYSTEM UTILITY NAVIGATION DRAWER CONTROLLER -->
+              <!-- VISUAL SCENE AXIS 2: THE SECURE STOREFRONT APPLICATIONS HUB DASHBOARD -->
+        <div id="store-dashboard-view" style="width: 100%; display: none; flex-direction: column; align-items: center; background-color: #000000; box-sizing: border-box;">
+            
+            <!-- 🏛️ ULTRA-GLASS NAVIGATION HEADER WITH LEFT TWO-LINE MENU ICON AND CENTERED BRANDING -->
+            <div class="store-nav-bar" style="width: 100%; height: 44px; display: flex; align-items: center; justify-content: space-between; background: rgba(10, 10, 12, 0.01); backdrop-filter: blur(50px) saturate(240%); -webkit-backdrop-filter: blur(50px) saturate(240%); border-bottom: 0.5px solid rgba(255, 255, 255, 0.02); padding: 0 16px; position: fixed; top: 0; left: 0; z-index: 9998; box-sizing: border-box;">
+                <!-- TWO-LINE HAMBURGER MENU GLYPH BUTTON -->
+                <button id="menu-drawer-trigger-btn" class="interactive-scale-feedback" style="background: none; border: none; color: #ffffff; cursor: pointer; display: flex; flex-direction: column; gap: 5px; padding: 4px; outline: none; width: 24px;">
+                    <div style="width: 20px; height: 2px; background-color: #ffffff; border-radius: 1px;"></div>
+                    <div style="width: 14px; height: 2px; background-color: #ffffff; border-radius: 1px;"></div>
+                </button>
+                <!-- PURE CENTERED BRAND WORDMARK -->
+                <div class="brand-font-center" style="font-weight: 700; font-size: 16px; letter-spacing: -0.3px; font-family: -apple-system, BlinkMacSystemFont, sans-serif; position: absolute; left: 50%; transform: translateX(-50%);">
+                    <span style="color: #ffffff;">Android</span><span style="color: #ff9f0a;">DevStore</span>
+                </div>
+                <div style="width: 24px; height: 24px;"></div>
+            </div>
+
+            <!-- 👥 SLIDING LEFT NAVIGATION MENU DRAWER CONTAINER -->
+            <div id="left-sidebar-menu-drawer" style="position: fixed; top: 0; left: -280px; width: 260px; height: 100vh; background: rgba(19, 19, 21, 0.97); backdrop-filter: blur(40px); -webkit-backdrop-filter: blur(40px); border-right: 0.5px solid rgba(255, 255, 255, 0.08); z-index: 9999; box-shadow: 10px 0 30px rgba(0,0,0,0.6); display: flex; flex-direction: column; padding: 60px 20px 24px 20px; box-sizing: border-box; transition: left 0.3s cubic-bezier(0.16, 1, 0.3, 1);">
+                <button id="close-drawer-btn" style="position: absolute; top: 12px; right: 16px; background: none; border: none; color: #86868b; font-size: 20px; cursor: pointer; outline: none;">✕</button>
+                <div style="display: flex; flex-direction: column; gap: 20px; width: 100%; text-align: left;">
+                    <div style="color: #ffffff; font-size: 17px; font-weight: 600; cursor: pointer;">📱 Today</div>
+                    <div style="color: #ffffff; font-size: 17px; font-weight: 600; cursor: pointer;">🚀 Games</div>
+                    <div style="color: #ffffff; font-size: 17px; font-weight: 600; cursor: pointer;">📦 Apps</div>
+                    <div style="color: #007aff; font-size: 17px; font-weight: 600; cursor: pointer;">🕹️ Arcade</div>
+                    <div id="nav-settings-btn" style="color: #ffffff; font-size: 17px; font-weight: 600; cursor: pointer;">⚙️ Settings</div>
+                    <div style="width: 100%; height: 0.5px; background: rgba(255,255,255,0.08); margin: 8px 0;"></div>
+                    <div id="nav-about-btn" style="color: #007aff; font-size: 15px; font-weight: 600; cursor: pointer;">About Developer</div>
+                    <div style="width: 100%; height: 0.5px; background: rgba(255,255,255,0.08); margin: 8px 0;"></div>
+                    <div style="color: #ff9f0a; font-size: 14px; font-weight: 700; cursor: pointer; letter-spacing: -0.2px;">🛠️ Join MeDevs ($)</div>
+                </div>
+            </div>
+
+            <!-- MAIN DASHBOARD CONTENT SCROLL COLUMN -->
+            <div id="store-main-content-scroll" style="width: 100%; max-width: 360px; padding: 60px 16px 40px 16px; display: flex; flex-direction: column; align-items: center; box-sizing: border-box;">
+                <!-- 🎥 LIVE VIDEO SPOTLIGHT FRAME -->
+                <div class="video-spotlight-chassis" style="width: 100%; height: 200px; border-radius: 20px; overflow: hidden; margin-bottom: 20px; box-shadow: 0 12px 32px rgba(0,0,0,0.6); background-color: #000000; width: 100%;">
+                    <video src="./src/assets/video.mp4" autoplay loop muted playsinline style="width: 100%; height: 100%; object-fit: cover; display: block; max-height: 240px;"></video>
+                </div>
+                <!-- SEARCH SYSTEM BAR -->
+                <div style="width: 100%; margin-bottom: 24px;">
+                    <input type="text" placeholder="🔍 Search Apps, Tiers, Developers" style="width: 100%; height: 38px; background: #1c1c1e; border: none; border-radius: 10px; padding: 0 12px 0 16px; color: #ffffff; font-size: 14px; outline: none; box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, sans-serif;">
+                </div>
+                <!-- MANUAL APP CARD BLOCK SKELETON -->
+                <div style="width: 100%; display: flex; flex-direction: column; gap: 16px;">
+                    <div style="background: rgba(255, 255, 255, 0.02); border: 0.5px solid rgba(255, 255, 255, 0.05); backdrop-filter: blur(30px); -webkit-backdrop-filter: blur(30px); border-radius: 16px; padding: 14px; display: flex; align-items: center; justify-content: space-between; width: 100%; cursor: pointer;">
+                        <div style="display: flex; align-items: center; gap: 12px; text-align: left;">
+                            <div style="width: 44px; height: 44px; background: linear-gradient(135deg, #1e1e24 0%, #4a154b 100%); border-radius: 10px;"></div>
+                            <div>
+                                <div style="font-size: 15px; font-weight: 700; color: #ffffff;">System Performance Engine</div>
+                                <div style="font-size: 11px; color: #86868b; margin-top: 2px;">Normal Users Suite &bull; By Emmanuel Mabheure</div>
+                            </div>
+                        </div>
+                        <button style="background: #2c2c2e; color: #007aff; border: none; padding: 6px 18px; border-radius: 14px; font-size: 12px; font-weight: 700; cursor: pointer; outline: none;">VIEW</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ⚙️ THE PRIVACY SETTINGS PANEL MODAL VIEW SHEET -->
+            <div id="settings-view-panel-sheet" style="width: 100%; max-width: 360px; display: none; flex-direction: column; padding: 60px 16px 40px 16px; box-sizing: border-box; text-align: left;">
+                <div style="text-transform: uppercase; font-size: 11px; color: #86868b; font-weight: 600; margin-bottom: 8px; letter-spacing: 0.5px; padding-left: 12px;">Device Preferences</div>
+                <div style="background-color: #1c1c1e; border-radius: 12px; width: 100%; padding: 4px 16px; margin-bottom: 12px; box-sizing: border-box;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 14px 0; border-bottom: 0.5px solid rgba(255,255,255,0.08);">
+                        <div style="font-size: 16px; color: #ffffff; font-weight: 500;">Show Terminal Logs</div>
+                        <div style="width: 44px; height: 24px; background: #34c759; border-radius: 24px; position: relative; cursor: pointer;"><div style="width: 20px; height: 20px; background: white; border-radius: 50%; position: absolute; right: 2px; top: 2px;"></div></div>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 14px 0;">
+                        <div style="font-size: 16px; color: #ffffff; font-weight: 500;">Use Play History</div>
+                        <div style="width: 44px; height: 24px; background: #34c759; border-radius: 24px; position: relative; cursor: pointer;"><div style="width: 20px; height: 20px; background: white; border-radius: 50%; position: absolute; right: 2px; top: 2px;"></div></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PRODUCT DETAIL OVERLAY BLOCK CONTAINER -->
+            <div id="product-preview-detail-sheet" style="position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: #000000; z-index: 10001; display: none; flex-direction: column; padding: 20px 16px; overflow-y: auto; box-sizing: border-box;"></div>
+
+            <button onclick="location.reload()" class="interactive-scale-feedback" style="background: #2c2c2e; color: #ffffff; border: none; padding: 8px 20px; border-radius: 20px; font-weight: 600; font-size: 13px; cursor: pointer; margin-bottom: 40px; margin-top: 20px;">Disconnect</button>
+        </div>
+    <!-- ⚙️ CORE NAVIGATION & LOCAL SCENE VISIBILITY CONTROLLER -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const dotsBtn = document.getElementById('dots-horizontal-trigger');
             const popoverMenu = document.getElementById('popover-dropdown-drawer');
+            const exploreBtn = document.getElementById('explore-trigger-pill');
+            const landingView = document.getElementById('landing-scene-container');
+            const storeDashboard = document.getElementById('store-dashboard-view');
 
-            // 1. Horizontal Three-Dot About Popup Actions
+            // 1. Horizontal Three-Dot Menu Click Handlers
             if (dotsBtn && popoverMenu) {
                 dotsBtn.addEventListener('click', (e) => {
                     e.stopPropagation();
@@ -191,9 +272,44 @@
                 });
                 document.addEventListener('click', () => { popoverMenu.style.display = 'none'; });
             }
+
+            // 2. High-Speed Local Viewport Scene Switcher (Bypasses all network path errors!)
+            if (exploreBtn && landingView && storeDashboard) {
+                exploreBtn.addEventListener('click', () => {
+                    // Swaps page displays locally over the pitch-black canvas
+                    landingView.style.display = 'none';
+                    storeDashboard.style.display = 'flex';
+                    window.scrollTo(0, 0);
+
+                    // Deploys the Hamburger Sidebar drawer interactions natively
+                    const trigger = document.getElementById('menu-drawer-trigger-btn');
+                    const drawer = document.getElementById('left-sidebar-menu-drawer');
+                    const closeBtn = document.getElementById('close-drawer-btn');
+                    const scrollCol = document.getElementById('store-main-content-scroll');
+                    const settingsView = document.getElementById('settings-view-panel-sheet');
+
+                    if (trigger && drawer && closeBtn) {
+                        trigger.addEventListener('click', (e) => { e.stopPropagation(); drawer.style.left = '0px'; });
+                        closeBtn.addEventListener('click', () => { drawer.style.left = '-280px'; });
+                        document.addEventListener('click', (e) => { if (!drawer.contains(e.target) && e.target !== trigger) drawer.style.left = '-280px'; });
+                    }
+
+                    // Link Sidebar Options to hidden layers inside MainScreen
+                    if (document.getElementById('nav-settings-btn')) {
+                        document.getElementById('nav-settings-btn').addEventListener('click', () => {
+                            scrollCol.style.display = 'none'; settingsView.style.display = 'flex'; drawer.style.left = '-280px';
+                        });
+                    }
+                    if (document.getElementById('nav-about-btn')) {
+                        document.getElementById('nav-about-btn').addEventListener('click', () => {
+                            alert("AndroidDevStore - Founded & Engineered by Emmanuel Mabheure."); drawer.style.left = '-280px';
+                        });
+                    }
+                });
+            }
         });
 
-        // 2. FAQ ACCORDION DROPDOWN SWITCHER ENGINE
+        // FAQ DROPDOWN ACCORDION ENGINE TRACKS
         function toggleFaqAccordionTrack(element) {
             const answer = element.querySelector('.faq-answer-panel');
             const chevron = element.querySelector('.faq-chevron');

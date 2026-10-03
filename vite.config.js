@@ -6,11 +6,10 @@ export default defineConfig({
     build: {
         outDir: 'dist',
         rollupOptions: {
-            // 📡 TELLS VITE TO COMPILE YOUR MASTER JAVASCRIPT PROFILE AND BOTH MAIN PAGE ENTRY STACKS
+            // 📡 REGISTER BOTH OF YOUR TOP-LEVEL ROOT HTML FILES
             input: {
                 main: resolve(__dirname, 'index.html'),
-                download: resolve(__dirname, 'download.html'),
-                appEngine: resolve(__dirname, 'src/main.js')
+                mainscreen: resolve(__dirname, 'mainscreen.html')
             }
         }
     },

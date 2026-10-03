@@ -1,15 +1,16 @@
 // =========================================================================================
-// 🪐 ANDROIDDEVSTORE UNIVERSAL INTERFACE ROUTER
+// 🪐 ANDROIDDEVSTORE BACKGROUND NAVIGATION GATEWAY ROUTER
 // Engineered & Founded by Emmanuel Mabheure
 // =========================================================================================
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Looks for the trigger pill element inside your explore.html markup once mounted
+    // Hooks the mounted button element ID cleanly from the DOM grid matrix
     const exploreBtn = document.getElementById('explore-trigger-pill');
     
     if (exploreBtn) {
-        exploreBtn.addEventListener('click', () => {
-            // Direct root URL hop - completely unblockable over the Vite production grid!
+        exploreBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            // Forces relative trajectory pathing to secure successful jumps inside subfolders
             window.location.href = './mainscreen.html';
         });
     }

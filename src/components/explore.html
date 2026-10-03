@@ -1,31 +1,12 @@
-<!-- ⚡ EXPLORE CORE: BALANCED INLINE VIEWPORT SCENE TRIGGER PILL -->
+<!-- ⚡ EXPLORE CORE: SCENE SWITCHER NAVIGATION TRIGGER -->
 <div class="explore-pill-box" style="margin-top: 24px; text-align: center;">
     <!-- 
-      ⚡ SELF-CONTAINED INLINE CLICK TRIGGER
-      This button houses the transition logic directly inside its own native properties, 
-      forcing an instant visibility swap the exact millisecond it is tapped on your phone!
+      ⚡ DIRECT INLINE WEB LINK MATRIX
+      This completely bypasses browser fragment restrictions by executing a direct 
+      top-level URL hop to your root storefront file the exact millisecond the user taps it!
     -->
     <button id="explore-trigger-pill" 
-            onclick="(function(){
-                const landing = document.getElementById('landing-scene-container');
-                const storeDashboard = document.getElementById('store-dashboard-view');
-                
-                if (landing && storeDashboard) {
-                    // 1. Instantly executes scene state switches on your pure pitch-black canvas
-                    landing.style.display = 'none';
-                    storeDashboard.style.display = 'flex';
-                    window.scrollTo(0, 0);
-                    
-                    // 2. Renders the temporary placeholder view live inside your dashboard viewport slot
-                    storeDashboard.innerHTML = `
-                        <div style='width: 100%; min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; background: #000000; color: #ffffff; font-family: -apple-system, BlinkMacSystemFont, sans-serif;'>
-                            <h2 style='font-size: 24px; font-weight: 700; color: #ffffff; letter-spacing: -0.5px;'>Ecosystem Activated</h2>
-                            <p style='color: #86868b; font-size: 14px; margin-top: 4px;'>AndroidDevStore Home Screen is ready for blueprinting.</p>
-                        </div>
-                    `;
-                    console.log('🪐 AndroidDevStore Engine: Home Screen layer activated smoothly via inline properties!');
-                }
-            })()" 
+            onclick="window.location.href = './mainscreen.html';" 
             class="interactive-scale-feedback" 
             style="background-color: #ffffff; color: #000000; font-size: 16px; font-weight: 600; padding: 12px 40px; border-radius: 24px; border: none; cursor: pointer; outline: none; box-shadow: 0 4px 14px rgba(255,255,255,0.15); display: inline-block;">
         Explore

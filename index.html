@@ -177,55 +177,8 @@
         </div>
     </div>
 
-    <!-- ⚙️ AUTOMATED SINGLE-FILE SKELETON MOUNT CONTROLLER -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const dotsBtn = document.getElementById('dots-horizontal-trigger');
-            const popoverMenu = document.getElementById('popover-dropdown-drawer');
-            const exploreBtn = document.getElementById('explore-trigger-pill');
-
-            // 1. Horizontal Three-Dot Menu Click Controls
-            if (dotsBtn && popoverMenu) {
-                dotsBtn.addEventListener('click', (e) => {
-                    e.stopPropagation();
-                    popoverMenu.style.display = popoverMenu.style.display === 'block' ? 'none' : 'block';
-                });
-                document.addEventListener('click', () => { popoverMenu.style.display = 'none'; });
-            }
-
-            // 2. Automated Asynchronous Fetch & View Switching Engine
-            if (exploreBtn) {
-                exploreBtn.addEventListener('click', async () => {
-                    const landingView = document.getElementById('landing-scene-container');
-                    const storeDashboard = document.getElementById('store-dashboard-view');
-                                if (landingView && storeDashboard) {
-                // ⚡ DIRECT LOCAL VISIBILITY SWITCH SWAP (Bypasses all network errors)
-                storeDashboard.innerHTML = `<div style="width: 100%; min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; background: #000000; color: #ffffff; font-family: -apple-system, BlinkMacSystemFont, sans-serif;"><h2 style="font-size: 24px; font-weight: 700; color: #ffffff; letter-spacing: -0.5px;">Ecosystem Activated</h2><p style="color: #86868b; font-size: 14px; margin-top: 4px;">AndroidDevStore Home Screen is ready for blueprinting.</p></div>`;
-                
-                landingView.style.display = 'none';
-                storeDashboard.style.display = 'flex';
-                window.scrollTo(0, 0);
-            }
-
-                            console.error("⚠️ Automated Ecosystem Assembly Error: ", err);
-                        }
-                    }
-                });
-            }
-        });
-
-        // FAQ ACCORDION DROPDOWN ENGINE
-        function toggleFaqAccordionTrack(element) {
-            const answer = element.querySelector('.faq-answer-panel');
-            const chevron = element.querySelector('.faq-chevron');
-            if (answer.style.display === 'none' || answer.style.display === '') {
-                answer.style.display = 'block';
-                chevron.textContent = '－';
-            } else {
-                answer.style.display = 'none';
-                chevron.textContent = '＋';
-            }
-        }
-    </script>
+        <!-- ⚡ SYSTEM ENGINE HOOK: PASSES ALL CONTROL TO YOUR MAIN JAVASCRIPT REPO -->
+    <script type="module" src="./src/main.js"></script>
 </body>
 </html>
+

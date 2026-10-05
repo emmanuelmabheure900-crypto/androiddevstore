@@ -1,6 +1,6 @@
 // =========================================================================================
-// 🪐 ANDROIDDEVSTORE UNIVERSAL COMPILER & MASTER PLATFORM MODULE ROUTER
-// Engineered & Founded by Emmanuel Mabheure
+// 🪐 ANDROIDDEVSTORE UNIVERSAL COMPILER & IN-MEMORY ENGINE
+// Engineered & Founded by Emmanuel Mabheure - Zero Fetch, Zero 404 Crashes
 // =========================================================================================
 
 const AndroidDevStore_CatalogDatabase = [
@@ -19,12 +19,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (exploreBtn && stageRoot) {
         exploreBtn.addEventListener('click', () => {
+            console.log("🪐 Main.js Engine: Compiling unified storefront viewport arrays...");
             
-            // 🧠 COMPILES COMPACT CENTERED NAVIGATION AND APPCARDS CORE INSTANTLY
+            // 🏛️ INJECTS THE ENTIRE CORES INFRASTRUCTURE WITH CENTERED BRANDING & DIRECT SIDEBAR MARKUP
             stageRoot.innerHTML = `
                 <div id="main-storefront-view-wrapper" style="width: 100%; display: flex; flex-direction: column; align-items: center; background-color: #000000; padding-top: 44px; box-sizing: border-box;">
                     
-                    <!-- 🏛️ ULTRA-GLASS NAVIGATION HEADER BAR (PERFECTLY CENTERED LOGO) -->
+                    <!-- 🏛️ ULTRA-GLASS NAVIGATION HEADER BAR (PERFECTLY CENTERED WORDMARK) -->
                     <div class="store-nav-bar" style="width: 100%; height: 44px; display: flex; align-items: center; justify-content: space-between; background: rgba(10, 10, 12, 0.01); backdrop-filter: blur(50px); -webkit-backdrop-filter: blur(50px); border-bottom: 0.5px solid rgba(255, 255, 255, 0.02); padding: 0 16px; position: fixed; top: 0; left: 0; z-index: 9998; box-sizing: border-box;">
                         
                         <!-- ☰ TOP-LEFT: THREE-LINE HAMBURGER TRIGGER BUTTON -->
@@ -43,8 +44,18 @@ document.addEventListener('DOMContentLoaded', () => {
                         <div style="width: 24px; height: 24px;"></div>
                     </div>
 
-                    <!-- 📡 DYNAMIC SLOT FOR THE SEPARATE SIDEBAR COMPONENT -->
-                    <div id="sidebar-component-mount-dock"></div>
+                    <!-- 👥 IN-MEMORY SIDEBAR DRAWER PANEL (Bypasses network folder 404 traps entirely!) -->
+                    <div id="left-sidebar-menu-drawer" style="position: fixed; top: 0; left: -280px; width: 260px; height: 100vh; background: rgba(19, 19, 21, 0.97); backdrop-filter: blur(40px); -webkit-backdrop-filter: blur(40px); border-right: 0.5px solid rgba(255, 255, 255, 0.08); z-index: 9999; box-shadow: 10px 0 30px rgba(0,0,0,0.6); display: flex; flex-direction: column; padding: 60px 20px 24px 20px; box-sizing: border-box; transition: left 0.3s cubic-bezier(0.16, 1, 0.3, 1);">
+                        <button id="close-drawer-btn" style="position: absolute; top: 12px; right: 16px; background: none; border: none; color: #86868b; font-size: 20px; cursor: pointer; outline: none;">✕</button>
+                        <div style="display: flex; flex-direction: column; gap: 20px; width: 100%; text-align: left; font-family: -apple-system, sans-serif;">
+                            <div id="nav-today-btn" style="color: #ffffff; font-size: 17px; font-weight: 600; cursor: pointer;">📱 Today</div>
+                            <div id="nav-games-btn" style="color: #ffffff; font-size: 17px; font-weight: 600; cursor: pointer;">🚀 Games</div>
+                            <div id="nav-apps-btn" style="color: #007aff; font-size: 17px; font-weight: 600; cursor: pointer;">📦 Apps</div>
+                            <div id="nav-arcade-btn" style="color: #ffffff; font-size: 17px; font-weight: 600; cursor: pointer;">🕹️ Arcade</div>
+                            <div style="width: 100%; height: 0.5px; background: rgba(255,255,255,0.08); margin: 8px 0;"></div>
+                            <div id="nav-settings-btn" style="color: #ffffff; font-size: 17px; font-weight: 600; cursor: pointer;">⚙️ Settings</div>
+                        </div>
+                    </div>
 
                     <!-- MAIN STOREFRONT CONTAINER LAYOUT FEED COLUMN -->
                     <div id="store-main-content-scroll" style="width: 100%; max-width: 360px; padding: 20px 16px 40px 16px; display: flex; flex-direction: column; align-items: center; box-sizing: border-box;">
@@ -61,18 +72,8 @@ document.addEventListener('DOMContentLoaded', () => {
             
             window.scrollTo(0, 0);
 
-            // 🚀 STEP 3: ASYNCHRONOUSLY FETCH AND LOAD THE SEPARATE SIDEBAR FILE LAYOUT
-            fetch('./src/components/Sidebar.html')
-                .then(response => response.text())
-                .then(htmlMarkup => {
-                    const dock = document.getElementById('sidebar-component-mount-dock');
-                    if (dock) {
-                        dock.innerHTML = htmlMarkup;
-                        activateSidebarDrawerMechanics(); // Bind trigger listeners once loaded!
-                    }
-                })
-                .catch(err => console.error("⚠️ Failed to load isolated Sidebar view sheet:", err));
-
+            // Instantly binds layout elements with zero external server dependencies
+            activateSidebarDrawerMechanics();
             buildAutomatedEcosystemCards();
         });
     }

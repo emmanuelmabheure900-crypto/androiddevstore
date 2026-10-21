@@ -1,1 +1,52 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Privacy Policy - AndroidDevStore</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            background-color: #000000; color: #ffffff; overflow-x: hidden;
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif;
+            -webkit-font-smoothing: antialiased; min-height: 100vh; line-height: 1.5;
+        }
+        #space-starfield-canvas { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: i; pointer-events: none; }
+        .stage-root { width: 100%; max-width: 360px; margin: 0 auto; position: relative; z-index: 10; padding: 40px 16px; }
+        .page-headline { font-size: 34px; font-weight: 800; letter-spacing: -1.2px; margin-bottom: 24px; text-align: left; }
+        .legal-block { background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 16px; padding: 20px; font-size: 14px; color: #e5e5ea; text-align: left; }
+        .legal-block h2 { font-size: 16px; font-weight: 700; color: #ffffff; margin-bottom: 8px; margin-top: 16px; }
+        .legal-block h2:first-of-type { margin-top: 0; }
+        .premium-back-btn { display: inline-block; margin-top: 32px; color: #ff9f0a; text-decoration: none; font-size: 14px; font-weight: 600; }
+        .premium-back-btn:active { opacity: 0.6; }
+    </style>
+</head>
+<body>
+
+    <canvas id="space-starfield-canvas"></canvas>
+
+    <div class="stage-root">
+        <h1 class="page-headline">Privacy Policy</h1>
+        
+        <div class="legal-block">
+            <h2>Data Collection Mandate</h2>
+            <p>AndroidDevStore operates as a decentralized client-side deployment architecture. We hold a strict zero-tracking telemetry constraint rule. No user package histories or binary installation records are compiled or tracked externally.</p>
+            
+            <h2>Handshake Security</h2>
+            <p>All download handshakes executed inside the platform are processed using isolated terminal configurations via local storage buffers on your specific device hardware configuration parameters.</p>
+        </div>
+
+        <a href="index.html" class="premium-back-btn">← Return to Storefront</a>
+    </div>
+
+    <script>
+        const canvas = document.getElementById('space-starfield-canvas'); const ctx = canvas.getContext('2d'); let pixelBoxes = [];
+        function resizeCanvas() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+        window.addEventListener('resize', resizeCanvas); resizeCanvas();
+        for (let i = 0; i < 65; i++) { pixelBoxes.push({ x: Math.random() * canvas.width, y: Math.random() * canvas.height, w: (Math.random() * 2) + 1.5, h: (Math.random() * 2) + 1.5, speed: (Math.random() * 0.35) + 0.15 }); }
+        function runPixelStarfieldEngine() { ctx.clearRect(0, 0, canvas.width, canvas.height); ctx.fillStyle = 'rgba(255, 255, 255, 0.65)'; pixelBoxes.forEach(p => { ctx.fillRect(p.x, p.y, p.w, p.h); p.y += p.speed; if (p.y > canvas.height) { p.y = 0; p.x = Math.random() * canvas.width; } }); requestAnimationFrame(runPixelStarfieldEngine); }
+        runPixelStarfieldEngine();
+    </script>
+</body>
+</html>

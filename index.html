@@ -18,7 +18,7 @@
         html, body {
             width: 100%; min-height: 100vh; margin: 0; padding: 0;
             background-color: #000000; color: #ffffff;
-            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif !important;
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", sans-serif !important;
             -webkit-font-smoothing: antialiased; overflow-x: hidden;
         }
 
@@ -27,18 +27,6 @@
             position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
             z-index: 1; pointer-events: none; background-color: #000000;
         }
-
-        /* 🏛️ ULTRA-GLASS TOP NAVIGATION HEADER BAR (LEFT ALIGNED) */
-        .glass-nav-bar {
-            position: fixed; top: 0; left: 0; width: 100%; height: 44px;
-            background: rgba(10, 10, 12, 0.4) !important;
-            backdrop-filter: blur(20px) saturate(190%) !important;
-            -webkit-backdrop-filter: blur(20px) saturate(190%) !important;
-            border-bottom: 0.5px solid rgba(255, 255, 255, 0.08);
-            z-index: 9999; display: flex; align-items: center; justify-content: flex-start; padding: 0 16px;
-        }
-        .brand-font-title-core { font-weight: 700; font-size: 16px; letter-spacing: -0.3px; color: #ffffff; text-align: left; }
-        .brand-orange { color: #ff9f0a; }
 
         /* 📐 STRUCTURAL LAYOUT CONTAINERS FRAME */
         .platform-dynamic-stage-root { 
@@ -54,7 +42,7 @@
         .compact-explore-pill {
             background-color: #ffffff; color: #000000; font-size: 16px; font-weight: 600; 
             padding: 12px 0; border-radius: 24px; border: none; cursor: pointer; outline: none; 
-            box-shadow: 0 4px 14px rgba(255,255,255,0.15); width: 100%; max-width: 180px; /* Reduced width chassis layout */
+            box-shadow: 0 4px 14px rgba(255,255,255,0.15); width: 100%; max-width: 180px; 
             margin: 0 auto; display: block;
         }
 
@@ -80,11 +68,7 @@
     <!-- 🌌 CALMING BACKGROUND PIXEL BOX STARS PARALLAX CANVAS -->
     <canvas id="space-starfield-canvas"></canvas>
 
-    <!-- 🏛️ HEADER BAR (LEFT ALIGNED) -->
-    <header class="glass-nav-bar">
-        <div class="brand-font-title-core">Android<span class="brand-orange">DevStore</span></div>
-    </header>
-
+    <!-- 🏛️ HARDCODED GLASS-NAV-BAR HEADER BLOCK COMPLETELY PURGED FROM THIS SLOT FOR BORDERLESS DESIGNS -->
     <div class="platform-dynamic-stage-root" id="platform-dynamic-stage-root">
         
         <!-- 📱 TARGET CONTENT SLOTS FOR THE ENTIRE PLATFORM LIFECYCLE -->
@@ -135,16 +119,16 @@
                     <div class="faq-answer-panel-static">The platform is optimized for everyone. Device profiles do not need active superuser privileges or unlocked bootloader configs to trigger standard wireless terminal bridges.</div>
                 </div>
             </div>
-
             <!-- ✍️ BRAND AUTHORSHIP REVEAL LINE PLACEMENT FLOATING OUTSIDE -->
             <div class="faq-block-section" style="padding-top: 8px; padding-bottom: 24px;">
                 <p style="font-size: 14px; font-weight: 600; color: #ff9f0a; font-family: -apple-system, sans-serif; letter-spacing: -0.2px;">Made by Emmanuel Mabheure</p>
             </div>
+            
             <!-- 🏛️ TRANSLUCENT CARDLESS FOOTER ELEMENT ARCHITECTURE (100% APPLE ICLOUD BLUEPRINT) -->
             <div id="standalone-apple-footer-chassis" style="width: 100%; max-width: 340px; padding: 24px 16px 40px 16px; margin: 0 auto; box-sizing: border-box; align-self: center;">
                 
                 <!-- TAPPABLE LINK TEXT CHANNELS -->
-                <div style="display: flex; flex-direction: row; flex-wrap: wrap; justify-content: flex-start; align-items: center; gap: 6px; width: 100hd;">
+                <div style="display: flex; flex-direction: row; flex-wrap: wrap; justify-content: flex-start; align-items: center; gap: 6px; width: 100%;">
                     <a href="./system.html" class="premium-footer-nav-link">System Status</a>
                     <span style="color: #424245; font-size: 11px;">|</span>
                     <a href="./about.html" class="premium-footer-nav-link">About</a>

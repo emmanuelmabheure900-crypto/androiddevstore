@@ -1,1 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>System Status - AndroidDevStore</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            background-color: #000000; color: #ffffff; overflow-x: hidden;
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif;
+            -webkit-font-smoothing: antialiased; min-height: 100vh;
+        }
+        #space-starfield-canvas { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: i; pointer-events: none; }
+        .stage-root { width: 100%; max-width: 360px; margin: 0 auto; position: relative; z-index: 10; padding: 40px 16px; }
+        .page-headline { font-size: 34px; font-weight: 800; letter-spacing: -1.2px; margin-bottom: 24px; text-align: left; }
+        .status-chassis { display: flex; flex-direction: column; gap: 12px; width: 100%; }
+        .status-card-row { background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 16px; padding: 16px; display: flex; justify-content: space-between; align-items: center; }
+        .node-label { font-size: 15px; font-weight: 700; color: #ffffff; }
+        .node-indicator { font-size: 13px; font-weight: 600; color: #30d158; background: rgba(48, 209, 88, 0.1); padding: 4px 10px; border-radius: 12px; }
+        .premium-back-btn { display: inline-block; margin-top: 32px; color: #ff9f0a; text-decoration: none; font-size: 14px; font-weight: 600; transition: opacity 0.1s; }
+        .premium-back-btn:active { opacity: 0.6; }
+    </style>
+</head>
+<body>
+
+    <!-- 🌌 CALMING BACKGROUND FAST PIXEL BOX STARS -->
+    <canvas id="space-starfield-canvas"></canvas>
+
+    <div class="stage-root">
+        <h1 class="page-headline">System Status</h1>
+        
+        <div class="status-chassis">
+            <div class="status-card-row">
+                <span class="node-label">APK Serving Gateway</span>
+                <span class="node-indicator">Operational</span>
+            </div>
+            <div class="status-card-row">
+                <span class="node-label">Secure Handshake Uplink</span>
+                <span class="node-indicator">Operational</span>
+            </div>
+            <div class="status-card-row">
+                <span class="node-label">Static File Repositories</span>
+                <span class="node-indicator">Operational</span>
+            </div>
+        </div>
+
+        <a href="index.html" class="premium-back-btn">← Return to Storefront</a>
+    </div>
+
+    <script>
+        const canvas = document.getElementById('space-starfield-canvas'); const ctx = canvas.getContext('2d'); let pixelBoxes = [];
+        function resizeCanvas() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+        window.addEventListener('resize', resizeCanvas); resizeCanvas();
+        for (let i = 0; i < 65; i++) { pixelBoxes.push({ x: Math.random() * canvas.width, y: Math.random() * canvas.height, w: (Math.random() * 2) + 1.5, h: (Math.random() * 2) + 1.5, speed: (Math.random() * 0.35) + 0.15 }); }
+        function runPixelStarfieldEngine() { ctx.clearRect(0, 0, canvas.width, canvas.height); ctx.fillStyle = 'rgba(255, 255, 255, 0.65)'; pixelBoxes.forEach(p => { ctx.fillRect(p.x, p.y, p.w, p.h); p.y += p.speed; if (p.y > canvas.height) { p.y = 0; p.x = Math.random() * canvas.width; } }); requestAnimationFrame(runPixelStarfieldEngine); }
+        runPixelStarfieldEngine();
+    </script>
+</body>
+</html>
 

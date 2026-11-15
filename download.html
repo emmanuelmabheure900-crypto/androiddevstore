@@ -112,7 +112,7 @@
                 const appKey = urlParams.get('app');
 
                 if (!appKey || !downloadDatabase.hasOwnProperty(appKey)) {
-                    window.location.href = "index.html";
+                    window.location.href = "mainscreen.html";
                     return;
                 }
 
@@ -125,7 +125,7 @@
                         document.getElementById('statusDetails').innerText = "Emmanuel is currently coding and compiling this APK package from scratch. Returning Home...";
                         
                         setTimeout(() => {
-                            window.location.href = "index.html";
+                            window.location.href = "mainscreen.html";
                         }, 3000);
                     }, 1000);
                 } else {
@@ -154,13 +154,13 @@
 
                         // Safe navigation return hook to preserve site viewport state
                         setTimeout(() => {
-                            window.location.href = "index.html";
+                            window.location.href = "mainscreen.html";
                         }, 3500);
 
                     }, 1500);
                 }
             } catch (err) {
-                window.location.href = "index.html";
+                window.location.href = "mainscreen.html";
             }
         }
 
